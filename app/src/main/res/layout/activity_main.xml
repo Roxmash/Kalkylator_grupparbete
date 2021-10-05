@@ -89,7 +89,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                android:text="@string/result"
+                android:text="@string/clear_inputs"
                 android:textSize="30sp"
               />
 
@@ -119,7 +119,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:text="@string/plus"
-                android:textSize="30dp"
+                android:textSize="30sp"
             />
 
             <Button
@@ -131,7 +131,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:text="@string/substraction"
-                android:textSize="30dp"
+                android:textSize="30sp"
         />
 
             <Button
@@ -143,7 +143,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:text="@string/divide"
-                android:textSize="30dp"
+                android:textSize="30sp"
               />
         </TableRow>
 
@@ -160,7 +160,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:text="@string/square_root"
-                android:textSize="30dp"
+                android:textSize="30sp"
                />
 
             <Button
@@ -172,7 +172,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:text="@string/procent"
-                android:textSize="30dp"
+                android:textSize="30sp"
                />
 
             <Button
@@ -184,7 +184,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:text="@string/multiplication"
-                android:textSize="30dp"
+                android:textSize="30sp"
                />
         </TableRow>
 
@@ -192,41 +192,48 @@
 
             <!-- Knapp rad 4 -->
 
-            <Button
+            <ImageButton
                 android:id="@+id/button_pythager"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                android:text="@string/pythageravsats"
+                app:srcCompat="@drawable/a2b2"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+                android:text=""
                 android:textSize="20sp"
               />
 
-            <Button
+            <ImageButton
                 android:id="@+id/button_cylinder_area"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                android:text="@string/cylinder_area"
+                app:srcCompat="@drawable/cylinder_button_final"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+                android:layout_gravity="center"
                 android:textSize="20sp"
-              />
+                android:contentDescription=""
+                />
 
 
             <Button
                 android:id="@+id/button_circle_area"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:text="@string/circle_area"
-                android:textSize="20dp"
+                android:textSize="20sp"
              />
         </TableRow>
 
