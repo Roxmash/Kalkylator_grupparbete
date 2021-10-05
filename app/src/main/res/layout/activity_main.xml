@@ -43,27 +43,41 @@
     <EditText
         android:id="@+id/input1"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/input2"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/input2"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_info" />
+        app:layout_constraintTop_toTopOf="@+id/input2" />
 
     <!-- input 2 -->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/input2"
+        app:layout_constraintEnd_toStartOf="@+id/input2"
+        app:layout_constraintStart_toEndOf="@+id/input1"
+        app:layout_constraintTop_toTopOf="@+id/input2"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
     <EditText
         android:id="@+id/input2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/input1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/input1"
-        app:layout_constraintTop_toTopOf="@+id/input1" />
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/app_info" />
 
     <!-- Knapp layout -->
 
@@ -118,9 +132,9 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:onClick="plusBtnClicked"
                 android:text="@string/plus"
-                android:textSize="30sp"
-            />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/button_minus"
@@ -212,16 +226,16 @@
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
+                android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                app:srcCompat="@drawable/cylinder_button_final"
-                android:scaleType="fitCenter"
-                android:padding="5dp"
-                android:layout_gravity="center"
-                android:textSize="20sp"
                 android:contentDescription=""
-                />
+                android:onClick="cylinderBtnClicked"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:textSize="20sp"
+                app:srcCompat="@drawable/cylinder_button_final" />
 
 
             <Button
@@ -242,16 +256,18 @@
     <!-- Result area -->
     <TextView
         android:id="@+id/display_result_tw"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+
         android:layout_marginTop="20dp"
-        android:text="@string/display_result"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/back"
         android:textSize="40sp"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input1" />
-
+        app:layout_constraintTop_toBottomOf="@+id/input2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

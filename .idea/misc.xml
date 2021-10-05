@@ -7,10 +7,14 @@
         <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/drawable/cylinder.xml" value="0.22135416666666666" />
         <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/drawable/pythagersats.xml" value="0.22135416666666666" />
         <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/layout/activity_main.xml" value="0.67" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3536458333333333" />
+        <entry key="app/src/main/res/drawable/back.xml" value="0.5796875" />
+        <entry key="app/src/main/res/drawable/circle_bg.xml" value="0.3536458333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
