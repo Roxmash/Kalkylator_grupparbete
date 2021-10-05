@@ -2,15 +2,17 @@
     <string name="app_name">Kalkylator_grupparbete</string>
     <string name="titel">Calculator</string>
     <string name="result">=</string>
-    <string name="divide">/</string>
+    <string name="divide">÷</string>
     <string name="plus">+</string>
     <string name="substraction">-</string>
-    <string name="multiplication">*</string>
+    <string name="multiplication">×</string>
     <string name="square_root">√</string>
     <string name="procent">%</string>
-    <string name="pythageravsats">a^2 + b^2</string>
-    <string name="circle_area">Circle</string>
-    <string name="cylinder_area">Cylinder</string>
+    <string name="pythageravsats">a²+b²</string>
+    <string name="circle_area">cirk_area</string>
+    <string name="cylinder_area">cyl_area</string>
+
+    <string name="clear_inputs">C</string>
 
     <string name="input_info">""</string>
     <string name="kalkylator_info">Write two numbers:</string>

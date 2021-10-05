@@ -8,6 +8,8 @@
 
 <!-- Grupparbete: Hampus, Denis, Ana, Oscar.Sparrman-->
 
+
+    <!-- App titel -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
@@ -22,6 +24,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Information -->
+
     <TextView
         android:id="@+id/app_info"
         android:layout_width="wrap_content"
@@ -34,6 +38,8 @@
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
+    <!-- input 1 -->
+
     <EditText
         android:id="@+id/input1"
         android:layout_width="0dp"
@@ -44,6 +50,8 @@
         app:layout_constraintEnd_toStartOf="@+id/input2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_info" />
+
+    <!-- input 2 -->
 
     <EditText
         android:id="@+id/input2"
@@ -57,6 +65,8 @@
         app:layout_constraintStart_toEndOf="@+id/input1"
         app:layout_constraintTop_toTopOf="@+id/input1" />
 
+    <!-- Knapp layout -->
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,153 +78,161 @@
 
         <TableRow>
 
-            <Button
-                android:id="@+id/button_plus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/circle_bg"
-                android:text="@string/plus"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.445"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="220dp" />
-
-            <Button
-                android:id="@+id/button_minus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/circle_bg"
-                android:text="@string/substraction"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.445"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="220dp" />
-
-            <Button
-                android:id="@+id/button_divide"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/circle_bg"
-                android:text="@string/divide"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.445"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="220dp" />
-        </TableRow>
-
-        <TableRow>
-
-            <Button
-                android:id="@+id/button_square_root"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/circle_bg"
-                android:text="@string/square_root"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.445"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="220dp" />
-
-            <Button
-                android:id="@+id/button_procent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/circle_bg"
-                android:text="@string/procent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.445"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="220dp" />
-
-            <Button
-                android:id="@+id/multiply"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/circle_bg"
-                android:text="@string/multiplication"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.445"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="220dp" />
-        </TableRow>
-
-        <TableRow>
-
-            <Button
-                android:id="@+id/button_pythager"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/circle_bg"
-                android:text="@string/pythageravsats"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.445"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="220dp" />
-
-            <Button
-                android:id="@+id/button_cylinder_area"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/circle_bg"
-                android:text="@string/cylinder_area"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.445"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="220dp" />
+            <!-- Knapp rad 1 -->
 
 
             <Button
-                android:id="@+id/button_circle_area"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/circle_bg"
-                android:text="@string/circle_area"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.445"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="220dp" />
-        </TableRow>
-
-        <TableRow>
-
-            <Button
-                android:id="@+id/button_result"
-                android:layout_width="match_parent"
+                android:id="@+id/button_erase"
+                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:text="@string/result"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.445"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="220dp" />
+                android:textSize="30sp"
+              />
 
+            <Button
+                android:id="@+id/button_result"
+                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_bg"
+                android:text="@string/result"
+                android:textSize="30sp"
+        />
+        </TableRow>
+
+        <TableRow>
+
+            <!-- Knapp rad 2 -->
+
+            <Button
+                android:id="@+id/button_plus"
+                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_bg"
+                android:text="@string/plus"
+                android:textSize="30dp"
+            />
+
+            <Button
+                android:id="@+id/button_minus"
+                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_bg"
+                android:text="@string/substraction"
+                android:textSize="30dp"
+        />
+
+            <Button
+                android:id="@+id/button_divide"
+                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_bg"
+                android:text="@string/divide"
+                android:textSize="30dp"
+              />
+        </TableRow>
+
+        <TableRow>
+
+            <!-- Knapp rad 3 -->
+
+            <Button
+                android:id="@+id/button_square_root"
+                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_bg"
+                android:text="@string/square_root"
+                android:textSize="30dp"
+               />
+
+            <Button
+                android:id="@+id/button_procent"
+                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_bg"
+                android:text="@string/procent"
+                android:textSize="30dp"
+               />
+
+            <Button
+                android:id="@+id/multiply"
+                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_bg"
+                android:text="@string/multiplication"
+                android:textSize="30dp"
+               />
+        </TableRow>
+
+        <TableRow>
+
+            <!-- Knapp rad 4 -->
+
+            <Button
+                android:id="@+id/button_pythager"
+                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_bg"
+                android:text="@string/pythageravsats"
+                android:textSize="20sp"
+              />
+
+            <Button
+                android:id="@+id/button_cylinder_area"
+                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_bg"
+                android:text="@string/cylinder_area"
+                android:textSize="20sp"
+              />
+
+
+            <Button
+                android:id="@+id/button_circle_area"
+                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_bg"
+                android:text="@string/circle_area"
+                android:textSize="20dp"
+             />
         </TableRow>
 
     </TableLayout>
 
-
-
-
+    <!-- Result area -->
     <TextView
         android:id="@+id/display_result_tw"
         android:layout_width="wrap_content"
