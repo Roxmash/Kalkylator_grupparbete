@@ -13,13 +13,13 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/button_height"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:gravity="center"
         android:text="@string/titel"
-        android:textSize="40sp"
+        android:textSize="@dimen/menu_size"
         android:textColor="@color/white"
         android:background="@drawable/circle_bg"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +35,7 @@
     <EditText
         android:id="@+id/input1"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/input_height"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="10dp"
         android:visibility="visible"
@@ -46,12 +46,13 @@
         app:layout_constraintVertical_bias="0.0"
         android:inputType="number"
         android:hint="@string/input_hint"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:autofillHints="enter a value"/>
 
     <ImageView
         android:id="@+id/math_mode"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/math_mode_width"
+        android:layout_height="@dimen/math_mode_height"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/input2"
@@ -60,12 +61,13 @@
         app:layout_constraintTop_toTopOf="@+id/input2"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/plus"
-        android:background="@drawable/circle_bg"/>
+        android:background="@drawable/circle_bg"
+        android:contentDescription=""/>
 
     <EditText
         android:id="@+id/input2"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/input_height"
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
@@ -75,7 +77,8 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/math_mode"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:autofillHints="enter a value"/>
 
     <!-- Knapp layout -->
 
@@ -98,7 +101,7 @@
                 android:id="@+id/button_erase"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/button_height"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
@@ -106,14 +109,14 @@
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 android:text="@string/clear_inputs"
-                android:textSize="35sp"
-                app:srcCompat="@drawable/clear_button" />
+                app:srcCompat="@drawable/clear_button"
+                android:contentDescription=""/>
 
             <ImageButton
                 android:id="@+id/button_result"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/button_height"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
@@ -121,7 +124,6 @@
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 android:text="@string/result"
-                android:textSize="30sp"
                 app:srcCompat="@drawable/equal" />
         </TableRow>
 
@@ -133,22 +135,20 @@
                 android:id="@+id/button_plus"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/button_height"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:onClick="plusBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                android:text=""
-                android:textSize="20sp"
                 app:srcCompat="@drawable/plus" />
 
             <ImageButton
                 android:id="@+id/button_minus"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/button_height"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
@@ -164,15 +164,13 @@
                 android:id="@+id/button_divide"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/button_height"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:onClick="divideBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                android:text=""
-                android:textSize="20sp"
                 app:srcCompat="@drawable/division" />
 
 
@@ -186,15 +184,13 @@
                 android:id="@+id/button_square_root"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/button_height"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:onClick="rootBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                android:text=""
-                android:textSize="20sp"
                 app:srcCompat="@drawable/sqr_root" />
 
 
@@ -202,15 +198,13 @@
                 android:id="@+id/button_procent"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/button_height"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:onClick="percentBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                android:text=""
-                android:textSize="20sp"
                 app:srcCompat="@drawable/procent_sign" />
 
 
@@ -218,15 +212,13 @@
                 android:id="@+id/multiply"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/button_height"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:onClick="multiplyBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                android:text=""
-                android:textSize="20sp"
                 app:srcCompat="@drawable/multiply" />
 
         </TableRow>
@@ -239,23 +231,20 @@
                 android:id="@+id/button_pythager"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/button_height"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:onClick="pyfagorBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                android:text=""
-                android:textSize="20sp"
                 app:srcCompat="@drawable/a2b2" />
 
             <ImageButton
                 android:id="@+id/button_cylinder_area"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
+                android:layout_height="@dimen/button_height"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
@@ -268,14 +257,13 @@
                 android:id="@+id/button_circle_area"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/button_height"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:onClick="circleBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                android:textSize="20sp"
                 app:srcCompat="@drawable/sphere" />
         </TableRow>
 
@@ -287,11 +275,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/back"
-        android:textSize="40sp"
+        android:textSize="@dimen/result_size"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -299,24 +286,30 @@
         app:layout_constraintTop_toBottomOf="@+id/input2" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/starring"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/starring"
+        android:textAlignment="center"
+        android:textSize="@dimen/starring_size"
+        android:textColor="@color/white"
+        android:background="@drawable/circle_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/co_ops"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:text="@string/coops"
+        android:textSize="@dimen/co_ops_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/starring"
+        android:textAlignment="center"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

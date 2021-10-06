@@ -17,9 +17,26 @@
     <string name="input_info">""</string>
     <string name="kalkylator_info">Write two numbers:</string>
     <string name="display_result">display result:</string>
-    <string name="starring">App creators:</string>
-    <string name="coops">Lillayoyo, Piggest, Virungabunga, Roxith:</string>
 
+    <string name="math_mode_content">choose what mode you want, ex: "plus":</string>
+
+    <string name="clear_content">choose what mode you want, ex: "plus":</string>
+    <string name="result_content">choose what mode you want, ex: "plus":</string>
+
+    <string name="plus_content">choose this too plus two values of your choice:</string>
+    <string name="minus_content">choose this too subtract one value from another:</string>
+    <string name="division_content">choose this too multiply two values of your choice:</string>
+
+    <string name="square_root_content">choose what mode you want, ex: "plus":</string>
+    <string name="percent_content">choose what mode you want, ex: "plus":</string>
+    <string name="multiply_content">choose this too multiply two values of your choice:</string>
+
+    <string name="a2b2_content">choose this too calculate the value of the square on the hypotenuse:</string>
+    <string name="cylinder_volume_content">choose this too calculate the volume of a cylinder:</string>
+    <string name="circle_area_content">choose this too calculate the area of a circle:</string>
+
+    <string name="starring">App creators:</string>
+    <string name="coops">Lillayoyo, Piggest, Virungabunga, Roxith</string>
 
     <string name="input_hint">enter a value</string>
 
