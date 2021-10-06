@@ -60,7 +60,6 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:background="@color/buttoncolour"
         app:layout_constraintBottom_toBottomOf="@+id/input2"
         app:layout_constraintEnd_toStartOf="@+id/input2"
         app:layout_constraintStart_toEndOf="@+id/input1"
@@ -111,6 +110,9 @@
 
 
 
+                android:onClick="clearBtnClicked"
+                android:text="@string/clear_inputs"
+                android:textSize="35sp"
               />
 
             <ImageButton
@@ -126,7 +128,9 @@
                 android:padding="5dp"
                 android:text=""
                 android:textSize="20sp"
-        />
+                android:onClick="resultBtnClicked"
+                android:text="@string/result"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow>
@@ -162,6 +166,9 @@
                 android:text=""
                 android:textSize="20sp"
         />
+                android:onClick="minusBtnClicked"
+                android:text="@string/substraction"
+                android:textSize="30sp" />
 
             <ImageButton
                 android:id="@+id/button_divide"
@@ -177,6 +184,9 @@
                 android:text=""
                 android:textSize="20sp"
               />
+                android:onClick="divideBtnClicked"
+                android:text="@string/divide"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow>
@@ -197,6 +207,9 @@
                 android:text=""
                 android:textSize="20sp"
                />
+                android:onClick="rootBtnClicked"
+                android:text="@string/square_root"
+                android:textSize="30sp" />
 
             <ImageButton
                 android:id="@+id/button_procent"
@@ -212,6 +225,9 @@
                 android:text=""
                 android:textSize="20sp"
                 android:contentDescription="TODO" />
+                android:onClick="percentBtnClicked"
+                android:text="@string/procent"
+                android:textSize="30sp" />
 
             <ImageButton
                 android:id="@+id/multiply"
@@ -227,6 +243,9 @@
                 android:text=""
                 android:textSize="20sp"
                />
+                android:onClick="multiplyBtnClicked"
+                android:text="@string/multiplication"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow>
@@ -241,12 +260,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                app:srcCompat="@drawable/a2b2"
-                android:scaleType="fitCenter"
+                android:onClick="pyfagorBtnClicked"
                 android:padding="5dp"
+                android:scaleType="fitCenter"
                 android:text=""
                 android:textSize="20sp"
-              />
+                app:srcCompat="@drawable/a2b2" />
 
             <ImageButton
                 android:id="@+id/button_cylinder_area"
@@ -261,11 +280,9 @@
                 android:onClick="cylinderBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                android:textSize="20sp"
-                app:srcCompat="@drawable/cylinder_button_final" />
+                app:srcCompat="@drawable/cylinder" />
 
-
-            <Button
+            <ImageButton
                 android:id="@+id/button_circle_area"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
@@ -273,9 +290,11 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                android:text="@string/circle_area"
+                android:onClick="circleBtnClicked"
                 android:textSize="20sp"
-             />
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/sphere" />
         </TableRow>
 
     </TableLayout>
