@@ -3,15 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/svens/AndroidStudioProjects/Kalkylator_grupparbete/app/src/main/res/drawable/cylinder.xml" value="0.32037037037037036" />
-        <entry key="..\:/Users/svens/AndroidStudioProjects/Kalkylator_grupparbete/app/src/main/res/drawable/procent.xml" value="0.32037037037037036" />
-        <entry key="..\:/Users/svens/AndroidStudioProjects/Kalkylator_grupparbete/app/src/main/res/layout/activity_main.xml" value="0.3255208333333333" />
-        <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/drawable/circle_bg.xml" value="0.3828125" />
+        <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/drawable/clear_button.xml" value="0.22135416666666666" />
         <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/drawable/cylinder.xml" value="0.22135416666666666" />
         <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/drawable/pythagersats.xml" value="0.22135416666666666" />
-        <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/layout/activity_main.xml" value="0.22" />
       </map>
     </option>
   </component>
