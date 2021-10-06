@@ -164,10 +164,9 @@
                 android:padding="5dp"
                 android:text=""
                 android:textSize="20sp"
-        />
                 android:onClick="minusBtnClicked"
-                android:text="@string/substraction"
-                android:textSize="30sp" />
+        />
+
 
             <ImageButton
                 android:id="@+id/button_divide"
@@ -182,10 +181,10 @@
                 android:padding="5dp"
                 android:text=""
                 android:textSize="20sp"
-              />
                 android:onClick="divideBtnClicked"
-                android:text="@string/divide"
-                android:textSize="30sp" />
+              />
+
+
         </TableRow>
 
         <TableRow>
@@ -205,10 +204,9 @@
                 android:padding="5dp"
                 android:text=""
                 android:textSize="20sp"
-               />
                 android:onClick="rootBtnClicked"
-                android:text="@string/square_root"
-                android:textSize="30sp" />
+               />
+
 
             <ImageButton
                 android:id="@+id/button_procent"
@@ -223,10 +221,9 @@
                 android:padding="5dp"
                 android:text=""
                 android:textSize="20sp"
-                android:contentDescription="TODO" />
-                android:onClick="percentBtnClicked"
-                android:text="@string/procent"
-                android:textSize="30sp" />
+                android:contentDescription="TODO"
+                android:onClick="percentBtnClicked"/>
+
 
             <ImageButton
                 android:id="@+id/multiply"
@@ -241,10 +238,9 @@
                 android:padding="5dp"
                 android:text=""
                 android:textSize="20sp"
-               />
                 android:onClick="multiplyBtnClicked"
-                android:text="@string/multiplication"
-                android:textSize="30sp" />
+               />
+
         </TableRow>
 
         <TableRow>

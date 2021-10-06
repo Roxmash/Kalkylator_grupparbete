@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         input1 = findViewById(R.id.input1);
         input2 = findViewById(R.id.input2);
-        resultText =findViewById(R.id.display_result_tw);
+        resultText = findViewById(R.id.display_result_tw);
     }
 
     private void changeFieldsVisibility(boolean showTwoField){
@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         input1.setHint("value 1");
         input2.setHint("value 2");
         changeFieldsVisibility(true);
+
     }
 
     public void minusBtnClicked(View view) {
@@ -141,8 +142,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void resultBtnClicked(View view) {
         if( checkInput(input1) != "ERROR" && checkInput(input2) != "ERROR" && isTwoFieldShowed) {
+
+
+            String str1 = input1.toString();
+            String str2 = input1.toString();
+
             double input1AsDouble = Double.parseDouble(input1.toString());
             double input2AsDouble = Double.parseDouble(input2.toString());
+
+
             switchOperation(input1AsDouble, input2AsDouble);
         } else if(checkInput(input2) != "ERROR" && !isTwoFieldShowed) {
             double input2AsDouble = Double.parseDouble(input2.toString());
