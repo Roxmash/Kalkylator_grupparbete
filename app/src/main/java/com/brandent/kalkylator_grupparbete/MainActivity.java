@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         String resultAsString = df.format(result);
 
         resultText.setVisibility(View.VISIBLE);
+        resultText.setText(resultAsString);
     }
 
     //Clear input field
@@ -169,8 +170,7 @@ public class MainActivity extends AppCompatActivity {
             double input2AsDouble = Double.parseDouble(input2.getText().toString());
             switchOperation(0, input2AsDouble);
         } else {
-            Toast toast=Toast.makeText(getApplicationContext(),"Error for input, please enter a number",Toast.LENGTH_SHORT);
-            toast.show();
+            resultText.setText("ERROR");
         }
     }
 
