@@ -126,8 +126,6 @@
                 app:srcCompat="@drawable/equal"
                 android:scaleType="fitCenter"
                 android:padding="5dp"
-                android:text=""
-                android:textSize="20sp"
                 android:onClick="resultBtnClicked"
                 android:text="@string/result"
                 android:textSize="30sp" />
