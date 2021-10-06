@@ -3,11 +3,8 @@ package com.brandent.kalkylator_grupparbete;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.system.ErrnoException;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,11 +33,6 @@ public class MainActivity extends AppCompatActivity {
         input1 = findViewById(R.id.input1);
         input2 = findViewById(R.id.input2);
         resultText =findViewById(R.id.display_result_tw);
-
-//        Button plusButton = findViewById(R.id.button_plus);
-//        Button minusButton =findViewById(R.id.button_minus);
-
-
     }
 
     private void changeFieldsVisibility(boolean showTwoField){
@@ -58,24 +50,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //hämtar input från Edittext och gör om till Double
-    public double getInput(EditText input){
-        String input1AsString = input.getText().toString();
+    public String checkInput(EditText input){
+        String inputStr = input.getText().toString();
 
-        double input1AsDouble = Double.parseDouble(input1AsString);
-
-//        try {
-//            double input1AsDouble = Double.parseDouble(input1AsString);
-//        } catch (Exception e){
-//            Toast toast=Toast.makeText(getApplicationContext(),"Error for first input" + e,Toast.LENGTH_SHORT);
-//            toast.show();
-//        }
-        return input1AsDouble;
+        if(isNumeric(inputStr)) {
+            return inputStr;
+        } else {
+            return "ERROR";
+        }
     }
+
+
     // Gör om svar till en sträng och visar det i resultText.
-    public void setResult(){
+    public void setResult(double result){
         DecimalFormat df = new DecimalFormat("#.00");
 
-        String resultAsString = df.format(resultAsDouble);
+        String resultAsString = df.format(result);
 
         resultText.setVisibility(View.VISIBLE);
     }
@@ -88,25 +78,30 @@ public class MainActivity extends AppCompatActivity {
 
     public void plusBtnClicked(View view) {
         currentOperation = "+";
+        input1.setHint("value 1");
+        input2.setHint("value 2");
         changeFieldsVisibility(true);
     }
 
     public void minusBtnClicked(View view) {
         currentOperation = "-";
+        input1.setHint("value 1");
+        input2.setHint("value 2");
         changeFieldsVisibility(true);
     }
 
     public void divideBtnClicked(View view) {
         currentOperation = "/";
+        input1.setHint("value 1");
+        input2.setHint("value 2");
         changeFieldsVisibility(true);
     }
 
     public void rootBtnClicked(View view) {
         currentOperation = "√";
         changeFieldsVisibility(false);
-        input1.setHint("%");
+        input1.setHint("");
         input2.setHint("Value");
-
     }
 
     public void percentBtnClicked(View view) {
@@ -118,14 +113,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void multiplyBtnClicked(View view) {
         currentOperation = "*";
+        input1.setHint("value 1");
+        input2.setHint("value 2");
         changeFieldsVisibility(true);
     }
 
     public void pyfagorBtnClicked(View view) {
         currentOperation = "pythagoras";
+        input1.setHint("value a");
+        input2.setHint("value b");
         changeFieldsVisibility(true);
     }
 
+            //Ska vara cylinder volym
     public void cylinderBtnClicked(View view) {
         currentOperation = "cylinder";
         changeFieldsVisibility(true);
@@ -135,181 +135,79 @@ public class MainActivity extends AppCompatActivity {
 
     public void circleBtnClicked(View view) {
         currentOperation = "circle";
+        input2.setHint("Radie");
         changeFieldsVisibility(false);
     }
 
     public void resultBtnClicked(View view) {
+        if( checkInput(input1) != "ERROR" && checkInput(input2) != "ERROR" && isTwoFieldShowed) {
+            double input1AsDouble = Double.parseDouble(input1.toString());
+            double input2AsDouble = Double.parseDouble(input2.toString());
+            switchOperation(input1AsDouble, input2AsDouble);
+        } else if(checkInput(input2) != "ERROR" && !isTwoFieldShowed) {
+            double input2AsDouble = Double.parseDouble(input2.toString());
+            switchOperation(0, input2AsDouble);
+        } else {
+            Toast toast=Toast.makeText(getApplicationContext(),"Error for input, please enter a number",Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
 
-         input1AsDouble = getInput(input1);
-         input2AsDouble = getInput(input2);
+    private void switchOperation(double in1, double in2) {
+        CalcMath calc = new CalcMath(in1, in2);
+
+        double result = 0;
 
         switch (currentOperation) {
             case "+":
-                addition();
+                result = calc.addition();
                 break;
 
             case "-":
-                subtraction();
+                result = calc.subtraction();
                 break;
 
             case "/":
-                division();
+                result = calc.division();
                 break;
 
             case "%":
-                percent();
+                result = calc.percent();
                 break;
 
             case  "*":
-                multiplication();
+                result = calc.multiplication();
                 break;
 
             case "pythagoras":
-                pythagoras();
+                result = calc.pythagoras();
                 break;
 
             case "√":
-                squareRoot();
+                result = calc.squareRoot();
                 break;
 
             case "cylinder":
-                cylinderVolume();
+                result = calc.cylinderVolume();
                 break;
 
             case "circle":
-                circleArea();
+                result = calc.circleArea();
                 break;
 
             default:
                 Toast toast=Toast.makeText(getApplicationContext(),"Something went wrong with current operation." ,Toast.LENGTH_SHORT);
                 toast.show();
         }
-        setResult();
+        setResult(result);
     }
 
-
-    public void addition() {
-        resultAsDouble = input1AsDouble + input2AsDouble;
+    public static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+        }
     }
-
-    public void subtraction() {
-        resultAsDouble = input1AsDouble - input2AsDouble;
-    }
-
-    public void multiplication() {
-        resultAsDouble = input1AsDouble * input2AsDouble;
-    }
-
-    public void division() {
-        resultAsDouble = input1AsDouble/input2AsDouble;
-    }
-    //
-    public void percent() {
-        resultAsDouble = (input1AsDouble/100) * input2AsDouble;
-    }
-    // Tar roten ur på input1 bara
-    public void squareRoot() {
-        resultAsDouble = Math.sqrt(input1AsDouble);
-    }
-
-    public void pythagoras() {
-        resultAsDouble = Math.pow(input1AsDouble,2) +Math.pow(input2AsDouble,2);
-    }
-    //vi räknar med input1 som radie
-    public void circleArea() {
-        resultAsDouble = Math.pow( input1AsDouble,2) * Math.PI;
-    }
-    // vi räknar med input1 som radie och input 2 som höjd
-    public void cylinderVolume() {
-        resultAsDouble = Math.pow(input1AsDouble, 2) * Math.PI * input2AsDouble;
-    }
-
-    //        minusButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getInput1();
-//                getInput2();
-//                subtraction();
-//            }
-//        });
-//
-//        Button divideButton =findViewById(R.id.button_divide);
-//        divideButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getInput1();
-//                getInput2();
-//                division();
-//            }
-//        });
-//
-//        Button squareRootButton =findViewById(R.id.button_square_root);
-//        squareRootButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getInput1();
-//                squareRoot();
-//            }
-//        });
-//
-//        Button percentButton =findViewById(R.id.button_procent);
-//        percentButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getInput1();
-//                getInput2();
-//                percent();
-//            }
-//        });
-//
-//        Button multiplicationButton =findViewById(R.id.multiply);
-//        multiplicationButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getInput1();
-//                getInput2();
-//                multiplication();
-//            }
-//        });
-//
-//
-//        ImageButton pythagorasButton =findViewById(R.id.button_pythager);
-//        pythagorasButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getInput1();
-//                getInput2();
-//                pythagoras();
-//            }
-//        });
-//        //Ska vara cylinder volym
-//        ImageButton CylinderVolumeButton =findViewById(R.id.button_cylinder_area);
-//        divideButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getInput1();
-//                getInput2();
-//                cylinderVolume();
-//            }
-//        });
-//        Button circleAreaButton =findViewById(R.id.button_circle_area);
-//        circleAreaButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getInput1();
-//                getInput2();
-//                circleArea();
-//            }
-//        });
-//
-//
-//        Button resultButton = findViewById(R.id.button_result);
-//        resultButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                setResult();
-//
-//            }
-//        });
-
 }

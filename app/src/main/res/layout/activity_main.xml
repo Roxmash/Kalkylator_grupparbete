@@ -40,6 +40,8 @@
 
     <!-- input 1 -->
 
+    <!-- input 2 -->
+
     <EditText
         android:id="@+id/input1"
         android:layout_width="0dp"
@@ -50,9 +52,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/input2"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/input2" />
-
-    <!-- input 2 -->
+        app:layout_constraintTop_toTopOf="@+id/input2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView"
