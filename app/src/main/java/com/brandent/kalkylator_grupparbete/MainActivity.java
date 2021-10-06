@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
 
         String resultAsString = df.format(resultAsDouble);
 
-        resultText.setText(resultAsString);
         resultText.setVisibility(View.VISIBLE);
     }
 
@@ -123,14 +122,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void pyfagorBtnClicked(View view) {
-        currentOperation = "pythagor";
+        currentOperation = "pythagoras";
         changeFieldsVisibility(true);
     }
 
     public void cylinderBtnClicked(View view) {
         currentOperation = "cylinder";
         changeFieldsVisibility(true);
-
+        input1.setHint("Radie");
+        input2.setHint("Height");
     }
 
     public void circleBtnClicked(View view) {
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 multiplication();
                 break;
 
-            case "pythagor":
+            case "pythagoras":
                 pythagoras();
                 break;
 
