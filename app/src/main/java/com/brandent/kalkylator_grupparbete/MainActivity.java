@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     String tempStr = "";
     String currentOperation = "+";
 
+    ImageView mathMode;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         input1 = findViewById(R.id.input1);
         input2 = findViewById(R.id.input2);
-        resultText = findViewById(R.id.display_result_tw);
+        resultText =findViewById(R.id.display_result_tw);
+        mathMode = findViewById(R.id.math_mode);
     }
 
     private void changeFieldsVisibility(boolean showTwoField){
@@ -46,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
             input1.setVisibility(View.GONE);
             isTwoFieldShowed = false;
         }
+
+    }
+
+    private void setImage(String imageName) {
+
+        int id = getResources().getIdentifier(imageName,"drawable",getPackageName());
+        mathMode.setImageResource(id);
 
     }
 
@@ -81,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         input1.setHint("value 1");
         input2.setHint("value 2");
         changeFieldsVisibility(true);
-
+        setImage("plus");
     }
 
     public void minusBtnClicked(View view) {
@@ -89,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         input1.setHint("value 1");
         input2.setHint("value 2");
         changeFieldsVisibility(true);
+        setImage("minus");
     }
 
     public void divideBtnClicked(View view) {
@@ -96,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         input1.setHint("value 1");
         input2.setHint("value 2");
         changeFieldsVisibility(true);
+        setImage("division");
     }
 
     public void rootBtnClicked(View view) {
@@ -103,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         changeFieldsVisibility(false);
         input1.setHint("");
         input2.setHint("Value");
+        setImage("sqr_root");
     }
 
     public void percentBtnClicked(View view) {
@@ -110,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         changeFieldsVisibility(true);
         input1.setHint("%");
         input2.setHint("Value");
+        setImage("procent_sign");
     }
 
     public void multiplyBtnClicked(View view) {
@@ -117,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
         input1.setHint("value 1");
         input2.setHint("value 2");
         changeFieldsVisibility(true);
+        setImage("multiply");
     }
 
     public void pyfagorBtnClicked(View view) {
@@ -124,6 +140,8 @@ public class MainActivity extends AppCompatActivity {
         input1.setHint("value a");
         input2.setHint("value b");
         changeFieldsVisibility(true);
+        setImage("a2b2");
+
     }
 
             //Ska vara cylinder volym
@@ -132,28 +150,23 @@ public class MainActivity extends AppCompatActivity {
         changeFieldsVisibility(true);
         input1.setHint("Radie");
         input2.setHint("Height");
+        setImage("cylinder");
     }
 
     public void circleBtnClicked(View view) {
         currentOperation = "circle";
         input2.setHint("Radie");
         changeFieldsVisibility(false);
+        setImage("sphere");
     }
 
     public void resultBtnClicked(View view) {
         if( checkInput(input1) != "ERROR" && checkInput(input2) != "ERROR" && isTwoFieldShowed) {
-
-
-            String str1 = input1.getText().toString();
-            String str2 = input1.getText().toString();
-
-            double input1AsDouble = Double.parseDouble(str1);
-            double input2AsDouble = Double.parseDouble(str2);
-
-
+            double input1AsDouble = Double.parseDouble(input1.getText().toString());
+            double input2AsDouble = Double.parseDouble(input2.getText().toString());
             switchOperation(input1AsDouble, input2AsDouble);
         } else if(checkInput(input2) != "ERROR" && !isTwoFieldShowed) {
-            double input2AsDouble = Double.parseDouble(input2.toString());
+            double input2AsDouble = Double.parseDouble(input2.getText().toString());
             switchOperation(0, input2AsDouble);
         } else {
             Toast toast=Toast.makeText(getApplicationContext(),"Error for input, please enter a number",Toast.LENGTH_SHORT);
