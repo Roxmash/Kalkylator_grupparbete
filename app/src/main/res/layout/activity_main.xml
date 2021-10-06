@@ -60,6 +60,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:background="@color/buttoncolour"
         app:layout_constraintBottom_toBottomOf="@+id/input2"
         app:layout_constraintEnd_toStartOf="@+id/input2"
         app:layout_constraintStart_toEndOf="@+id/input1"
@@ -95,28 +96,36 @@
             <!-- Knapp rad 1 -->
 
 
-            <Button
+            <ImageButton
                 android:id="@+id/button_erase"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                android:text="@string/clear_inputs"
-                android:textSize="30sp"
+                app:srcCompat="@drawable/clear_button"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+
+
+
+
               />
 
-            <Button
+            <ImageButton
                 android:id="@+id/button_result"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                android:text="@string/result"
-                android:textSize="30sp"
+                app:srcCompat="@drawable/equal"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+                android:text=""
+                android:textSize="20sp"
         />
         </TableRow>
 
@@ -124,40 +133,49 @@
 
             <!-- Knapp rad 2 -->
 
-            <Button
+            <ImageButton
                 android:id="@+id/button_plus"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
                 android:onClick="plusBtnClicked"
-                android:text="@string/plus"
-                android:textSize="30sp" />
+                app:srcCompat="@drawable/plus"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+                android:text=""
+                android:textSize="20sp" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/button_minus"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                android:text="@string/substraction"
-                android:textSize="30sp"
+                app:srcCompat="@drawable/minus"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+                android:text=""
+                android:textSize="20sp"
         />
 
-            <Button
+            <ImageButton
                 android:id="@+id/button_divide"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                android:text="@string/divide"
-                android:textSize="30sp"
+                app:srcCompat="@drawable/division"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+                android:text=""
+                android:textSize="20sp"
               />
         </TableRow>
 
@@ -165,40 +183,49 @@
 
             <!-- Knapp rad 3 -->
 
-            <Button
+            <ImageButton
                 android:id="@+id/button_square_root"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                android:text="@string/square_root"
-                android:textSize="30sp"
+                app:srcCompat="@drawable/sqr_root"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+                android:text=""
+                android:textSize="20sp"
                />
 
-            <Button
+            <ImageButton
                 android:id="@+id/button_procent"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                android:text="@string/procent"
-                android:textSize="30sp"
-               />
+                app:srcCompat="@drawable/procent_sign"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:contentDescription="TODO" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/multiply"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                android:text="@string/multiplication"
-                android:textSize="30sp"
+                app:srcCompat="@drawable/multiply"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+                android:text=""
+                android:textSize="20sp"
                />
         </TableRow>
 
