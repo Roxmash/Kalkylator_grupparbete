@@ -36,105 +36,100 @@ public class MainActivity extends AppCompatActivity {
         resultText =findViewById(R.id.display_result_tw);
 
         Button plusButton = findViewById(R.id.button_plus);
-        plusButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getInput1();
-                getInput2();
-                addition();
-            }
-        });
+
 
         Button minusButton =findViewById(R.id.button_minus);
-        minusButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getInput1();
-                getInput2();
-                subtraction();
-            }
-        });
-
-        Button divideButton =findViewById(R.id.button_divide);
-        divideButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getInput1();
-                getInput2();
-                division();
-            }
-        });
-
-        Button squareRootButton =findViewById(R.id.button_square_root);
-        squareRootButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getInput1();
-                squareRoot();
-            }
-        });
-
-        Button percentButton =findViewById(R.id.button_procent);
-        percentButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getInput1();
-                getInput2();
-                percent();
-            }
-        });
-
-        Button multiplicationButton =findViewById(R.id.multiply);
-        multiplicationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getInput1();
-                getInput2();
-                multiplication();
-            }
-        });
-
-
-        ImageButton pythagorasButton =findViewById(R.id.button_pythager);
-        pythagorasButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getInput1();
-                getInput2();
-                pythagoras();
-            }
-        });
-        //Ska vara cylinder volym
-        ImageButton CylinderVolumeButton =findViewById(R.id.button_cylinder_area);
-        divideButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getInput1();
-                getInput2();
-                cylinderVolume();
-            }
-        });
-        Button circleAreaButton =findViewById(R.id.button_circle_area);
-        circleAreaButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getInput1();
-                getInput2();
-                circleArea();
-            }
-        });
-
-
-        Button resultButton = findViewById(R.id.button_result);
-        resultButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setResult();
-
-            }
-        });
+//        minusButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getInput1();
+//                getInput2();
+//                subtraction();
+//            }
+//        });
+//
+//        Button divideButton =findViewById(R.id.button_divide);
+//        divideButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getInput1();
+//                getInput2();
+//                division();
+//            }
+//        });
+//
+//        Button squareRootButton =findViewById(R.id.button_square_root);
+//        squareRootButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getInput1();
+//                squareRoot();
+//            }
+//        });
+//
+//        Button percentButton =findViewById(R.id.button_procent);
+//        percentButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getInput1();
+//                getInput2();
+//                percent();
+//            }
+//        });
+//
+//        Button multiplicationButton =findViewById(R.id.multiply);
+//        multiplicationButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getInput1();
+//                getInput2();
+//                multiplication();
+//            }
+//        });
+//
+//
+//        ImageButton pythagorasButton =findViewById(R.id.button_pythager);
+//        pythagorasButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getInput1();
+//                getInput2();
+//                pythagoras();
+//            }
+//        });
+//        //Ska vara cylinder volym
+//        ImageButton CylinderVolumeButton =findViewById(R.id.button_cylinder_area);
+//        divideButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getInput1();
+//                getInput2();
+//                cylinderVolume();
+//            }
+//        });
+//        Button circleAreaButton =findViewById(R.id.button_circle_area);
+//        circleAreaButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getInput1();
+//                getInput2();
+//                circleArea();
+//            }
+//        });
+//
+//
+//        Button resultButton = findViewById(R.id.button_result);
+//        resultButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                setResult();
+//
+//            }
+//        });
 
     }
+
+
 
     private void changeFieldsVisibility(boolean showTwoField){
         if(showTwoField){
@@ -212,5 +207,41 @@ public class MainActivity extends AppCompatActivity {
     // vi räknar med input1 som radie och input 2 som höjd
     public void cylinderVolume() {
         resultAsDouble = Math.pow( input1AsDouble,2) * Math.PI *input2AsDouble;
+    }
+
+    public void clearBtnClicked(View view) {
+
+    }
+
+    public void plusBtnClicked(View view) {
+        changeFieldsVisibility(true);
+    }
+
+    public void minusBtnClicked(View view) {
+    }
+
+    public void divideBtnClicked(View view) {
+    }
+
+    public void rootBtnClicked(View view) {
+    }
+
+    public void percentBtnClicked(View view) {
+    }
+
+    public void multiplyBtnClicked(View view) {
+    }
+
+    public void pyfagorBtnClicked(View view) {
+    }
+
+    public void cylinderBtnClicked(View view) {
+    }
+
+    public void circleBtnClicked(View view) {
+        changeFieldsVisibility(false);
+    }
+
+    public void resultBtnClicked(View view) {
     }
 }

@@ -103,9 +103,9 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:onClick="clearBtnClicked"
                 android:text="@string/clear_inputs"
-                android:textSize="30sp"
-              />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/button_result"
@@ -115,9 +115,9 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:onClick="resultBtnClicked"
                 android:text="@string/result"
-                android:textSize="30sp"
-        />
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow>
@@ -144,9 +144,9 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:onClick="minusBtnClicked"
                 android:text="@string/substraction"
-                android:textSize="30sp"
-        />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/button_divide"
@@ -156,9 +156,9 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:onClick="divideBtnClicked"
                 android:text="@string/divide"
-                android:textSize="30sp"
-              />
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow>
@@ -173,9 +173,9 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:onClick="rootBtnClicked"
                 android:text="@string/square_root"
-                android:textSize="30sp"
-               />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/button_procent"
@@ -185,9 +185,9 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:onClick="percentBtnClicked"
                 android:text="@string/procent"
-                android:textSize="30sp"
-               />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/multiply"
@@ -197,9 +197,9 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:onClick="multiplyBtnClicked"
                 android:text="@string/multiplication"
-                android:textSize="30sp"
-               />
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow>
@@ -214,12 +214,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                app:srcCompat="@drawable/a2b2"
-                android:scaleType="fitCenter"
+                android:onClick="pyfagorBtnClicked"
                 android:padding="5dp"
+                android:scaleType="fitCenter"
                 android:text=""
                 android:textSize="20sp"
-              />
+                app:srcCompat="@drawable/a2b2" />
 
             <ImageButton
                 android:id="@+id/button_cylinder_area"
@@ -246,9 +246,9 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:onClick="circleBtnClicked"
                 android:text="@string/circle_area"
-                android:textSize="20sp"
-             />
+                android:textSize="20sp" />
         </TableRow>
 
     </TableLayout>
