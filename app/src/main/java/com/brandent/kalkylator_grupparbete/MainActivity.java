@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     String inputStr1 = "";
     String inputStr2 = "";
     String tempStr = "";
+    String currentOperation = "plus";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //hämtar input frånt Edittext och gör om till Double
+    //hämtar input från Edittext och gör om till Double
     public double getInput1(){
         String input1AsString = input1.getText().toString();
         input1AsDouble = Double.parseDouble(input1AsString);
@@ -214,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void plusBtnClicked(View view) {
+
         changeFieldsVisibility(true);
     }
 
