@@ -144,11 +144,11 @@ public class MainActivity extends AppCompatActivity {
         if( checkInput(input1) != "ERROR" && checkInput(input2) != "ERROR" && isTwoFieldShowed) {
 
 
-            String str1 = input1.toString();
-            String str2 = input1.toString();
+            String str1 = input1.getText().toString();
+            String str2 = input1.getText().toString();
 
-            double input1AsDouble = Double.parseDouble(input1.toString());
-            double input2AsDouble = Double.parseDouble(input2.toString());
+            double input1AsDouble = Double.parseDouble(str1);
+            double input2AsDouble = Double.parseDouble(str2);
 
 
             switchOperation(input1AsDouble, input2AsDouble);
