@@ -73,8 +73,10 @@ public class MainActivity extends AppCompatActivity {
     }
     // Gör om svar till en sträng och visar det i resultText.
     public void setResult(){
+        DecimalFormat df = new DecimalFormat("#.00");
 
-        String resultAsString = Double.toString(resultAsDouble);
+        String resultAsString = df.format(resultAsDouble);
+
         resultText.setText(resultAsString);
         resultText.setVisibility(View.VISIBLE);
     }
@@ -121,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void pyfagorBtnClicked(View view) {
-        currentOperation = "pifagor";
+        currentOperation = "pythagor";
         changeFieldsVisibility(true);
     }
 
@@ -132,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void circleBtnClicked(View view) {
-        currentOperation = "cylinder";
+        currentOperation = "circle";
         changeFieldsVisibility(false);
     }
 
@@ -144,13 +146,45 @@ public class MainActivity extends AppCompatActivity {
         switch (currentOperation) {
             case "+":
                 addition();
-                setResult();
+                break;
+
+            case "-":
+                subtraction();
+                break;
+
+            case "/":
+                division();
+                break;
+
+            case "%":
+                percent();
+                break;
+
+            case  "*":
+                multiplication();
+                break;
+
+            case "pythagor":
+                pythagoras();
+                break;
+
+            case "√":
+                squareRoot();
+                break;
+
+            case "cylinder":
+                cylinderVolume();
+                break;
+
+            case "circle":
+                circleArea();
+                break;
 
             default:
-                Toast toast=Toast.makeText(getApplicationContext(),"Somthing goes wrong with current opretion" ,Toast.LENGTH_SHORT);
+                Toast toast=Toast.makeText(getApplicationContext(),"Something went wrong with current operation." ,Toast.LENGTH_SHORT);
                 toast.show();
         }
-
+        setResult();
     }
 
 
