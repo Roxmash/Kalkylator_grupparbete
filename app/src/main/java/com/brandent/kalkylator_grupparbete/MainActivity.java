@@ -13,12 +13,18 @@ import android.widget.Toast;
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
+
     double resultAsDouble;
     double input1AsDouble;
     double input2AsDouble;
     EditText input1;
     EditText input2;
     TextView resultText;
+
+    boolean isTwoFieldShowed = true;
+    String inputStr1 = "";
+    String inputStr2 = "";
+    String tempStr = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +35,7 @@ public class MainActivity extends AppCompatActivity {
         input2 = findViewById(R.id.input2);
         resultText =findViewById(R.id.display_result_tw);
 
-
-
-
-
-
-        Button plusButton =findViewById(R.id.button_plus);
+        Button plusButton = findViewById(R.id.button_plus);
         plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -133,9 +134,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
 
+    private void changeFieldsVisibility(boolean showTwoField){
+        if(showTwoField){
+
+            input1.setVisibility(View.VISIBLE);
+            isTwoFieldShowed = true;
+            input2.setText(tempStr);
+        } else {
+            tempStr = input2.getText().toString();
+            input2.setText(input1.getText().toString());
+            input1.setVisibility(View.GONE);
+
+            isTwoFieldShowed = false;
+        }
 
     }
+
     //hämtar input frånt Edittext och gör om till Double
     public double getInput1(){
         String input1AsString = input1.getText().toString();
