@@ -3,6 +3,7 @@ package com.brandent.kalkylator_grupparbete;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.system.ErrnoException;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     String inputStr1 = "";
     String inputStr2 = "";
     String tempStr = "";
-    String currentOperation = "plus";
+    String currentOperation = "+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +37,160 @@ public class MainActivity extends AppCompatActivity {
         input2 = findViewById(R.id.input2);
         resultText =findViewById(R.id.display_result_tw);
 
-        Button plusButton = findViewById(R.id.button_plus);
+//        Button plusButton = findViewById(R.id.button_plus);
+//        Button minusButton =findViewById(R.id.button_minus);
 
 
-        Button minusButton =findViewById(R.id.button_minus);
-//        minusButton.setOnClickListener(new View.OnClickListener() {
+    }
+
+    private void changeFieldsVisibility(boolean showTwoField){
+        if(showTwoField){
+            input1.setVisibility(View.VISIBLE);
+            isTwoFieldShowed = true;
+            input2.setText(tempStr);
+        } else {
+            tempStr = input2.getText().toString();
+            input2.setText(input1.getText().toString());
+            input1.setVisibility(View.GONE);
+            isTwoFieldShowed = false;
+        }
+
+    }
+
+    //hämtar input från Edittext och gör om till Double
+    public double getInput(EditText input){
+        String input1AsString = input.getText().toString();
+
+        double input1AsDouble = Double.parseDouble(input1AsString);
+
+//        try {
+//            double input1AsDouble = Double.parseDouble(input1AsString);
+//        } catch (Exception e){
+//            Toast toast=Toast.makeText(getApplicationContext(),"Error for first input" + e,Toast.LENGTH_SHORT);
+//            toast.show();
+//        }
+        return input1AsDouble;
+    }
+    // Gör om svar till en sträng och visar det i resultText.
+    public void setResult(){
+
+        String resultAsString = Double.toString(resultAsDouble);
+        resultText.setText(resultAsString);
+        resultText.setVisibility(View.VISIBLE);
+    }
+
+    //Clear input field
+    public void clearBtnClicked(View view) {
+        input1.setText("");
+        input2.setText("");
+    }
+
+    public void plusBtnClicked(View view) {
+        currentOperation = "+";
+        changeFieldsVisibility(true);
+    }
+
+    public void minusBtnClicked(View view) {
+        currentOperation = "-";
+        changeFieldsVisibility(true);
+    }
+
+    public void divideBtnClicked(View view) {
+        currentOperation = "/";
+        changeFieldsVisibility(true);
+    }
+
+    public void rootBtnClicked(View view) {
+        currentOperation = "√";
+        changeFieldsVisibility(false);
+        input1.setHint("%");
+        input2.setHint("Value");
+
+    }
+
+    public void percentBtnClicked(View view) {
+        currentOperation = "%";
+        changeFieldsVisibility(true);
+        input1.setHint("%");
+        input2.setHint("Value");
+    }
+
+    public void multiplyBtnClicked(View view) {
+        currentOperation = "*";
+        changeFieldsVisibility(true);
+    }
+
+    public void pyfagorBtnClicked(View view) {
+        currentOperation = "pifagor";
+        changeFieldsVisibility(true);
+    }
+
+    public void cylinderBtnClicked(View view) {
+        currentOperation = "cylinder";
+        changeFieldsVisibility(true);
+
+    }
+
+    public void circleBtnClicked(View view) {
+        currentOperation = "cylinder";
+        changeFieldsVisibility(false);
+    }
+
+    public void resultBtnClicked(View view) {
+
+         input1AsDouble = getInput(input1);
+         input2AsDouble = getInput(input2);
+
+        switch (currentOperation) {
+            case "+":
+                addition();
+                setResult();
+
+            default:
+                Toast toast=Toast.makeText(getApplicationContext(),"Somthing goes wrong with current opretion" ,Toast.LENGTH_SHORT);
+                toast.show();
+        }
+
+    }
+
+
+    public void addition() {
+        resultAsDouble = input1AsDouble + input2AsDouble;
+    }
+
+    public void subtraction() {
+        resultAsDouble = input1AsDouble - input2AsDouble;
+    }
+
+    public void multiplication() {
+        resultAsDouble = input1AsDouble * input2AsDouble;
+    }
+
+    public void division() {
+        resultAsDouble = input1AsDouble/input2AsDouble;
+    }
+    //
+    public void percent() {
+        resultAsDouble = (input1AsDouble/100) * input2AsDouble;
+    }
+    // Tar roten ur på input1 bara
+    public void squareRoot() {
+        resultAsDouble = Math.sqrt(input1AsDouble);
+    }
+
+    public void pythagoras() {
+        resultAsDouble = Math.pow(input1AsDouble,2) +Math.pow(input2AsDouble,2);
+    }
+    //vi räknar med input1 som radie
+    public void circleArea() {
+        resultAsDouble = Math.pow( input1AsDouble,2) * Math.PI;
+    }
+    // vi räknar med input1 som radie och input 2 som höjd
+    public void cylinderVolume() {
+        resultAsDouble = Math.pow(input1AsDouble, 2) * Math.PI * input2AsDouble;
+    }
+
+    //        minusButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
 //                getInput1();
@@ -128,122 +278,4 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-    }
-
-
-
-    private void changeFieldsVisibility(boolean showTwoField){
-        if(showTwoField){
-
-            input1.setVisibility(View.VISIBLE);
-            isTwoFieldShowed = true;
-            input2.setText(tempStr);
-        } else {
-            tempStr = input2.getText().toString();
-            input2.setText(input1.getText().toString());
-            input1.setVisibility(View.GONE);
-
-            isTwoFieldShowed = false;
-        }
-
-    }
-
-    //hämtar input från Edittext och gör om till Double
-    public double getInput1(){
-        String input1AsString = input1.getText().toString();
-        input1AsDouble = Double.parseDouble(input1AsString);
-        return input1AsDouble;
-
-    }
-
-    public double getInput2(){
-        String input2AsString = input2.getText().toString();
-        input2AsDouble = Double.parseDouble(input2AsString);
-        return input2AsDouble;
-
-    }
-
-    // Gör om svar till en sträng och visar det i resultText.
-    public void setResult(){
-
-        String resultAsString = Double.toString(resultAsDouble);
-        resultText.setText(resultAsString);
-        resultText.setVisibility(View.VISIBLE);
-    }
-
-    public double addition() {
-
-        resultAsDouble = input1AsDouble + input2AsDouble;
-        return resultAsDouble;
-
-    }
-
-    public void subtraction() {
-        resultAsDouble = input1AsDouble - input2AsDouble;
-    }
-
-    public void multiplication() {
-        resultAsDouble = input1AsDouble * input2AsDouble;
-    }
-
-    public void division() {
-        resultAsDouble = input1AsDouble/input2AsDouble;
-    }
-    //
-    public void percent() {
-        resultAsDouble = (input1AsDouble/100) * input2AsDouble;
-    }
-    // Tar roten ur på input1 bara
-    public void squareRoot() {
-        resultAsDouble = Math.sqrt(input1AsDouble);
-    }
-
-    public void pythagoras() {
-        resultAsDouble = Math.pow(input1AsDouble,2) +Math.pow(input2AsDouble,2);
-    }
-    //vi räknar med input1 som radie
-    public void circleArea() {
-        resultAsDouble = Math.pow( input1AsDouble,2) * Math.PI;
-    }
-    // vi räknar med input1 som radie och input 2 som höjd
-    public void cylinderVolume() {
-        resultAsDouble = Math.pow( input1AsDouble,2) * Math.PI *input2AsDouble;
-    }
-
-    public void clearBtnClicked(View view) {
-
-    }
-
-    public void plusBtnClicked(View view) {
-
-        changeFieldsVisibility(true);
-    }
-
-    public void minusBtnClicked(View view) {
-    }
-
-    public void divideBtnClicked(View view) {
-    }
-
-    public void rootBtnClicked(View view) {
-    }
-
-    public void percentBtnClicked(View view) {
-    }
-
-    public void multiplyBtnClicked(View view) {
-    }
-
-    public void pyfagorBtnClicked(View view) {
-    }
-
-    public void cylinderBtnClicked(View view) {
-    }
-
-    public void circleBtnClicked(View view) {
-        changeFieldsVisibility(false);
-    }
-
-    public void resultBtnClicked(View view) {
-    }
 }
