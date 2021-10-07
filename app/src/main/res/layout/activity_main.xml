@@ -223,7 +223,7 @@
 
 
             <ImageButton
-                android:id="@+id/multiply"
+                android:id="@+id/button_multiply"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/button_height"
@@ -251,7 +251,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
-                android:onClick="pyfagorBtnClicked"
+                android:onClick="pythagorBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/a2b2"
@@ -259,7 +259,7 @@
                 tools:ignore="UsingOnClickInXml"/>
 
             <ImageButton
-                android:id="@+id/button_cylinder_area"
+                android:id="@+id/button_cylinder_volume"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/button_height"

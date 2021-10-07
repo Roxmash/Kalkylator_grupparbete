@@ -14,6 +14,10 @@
 
     <string name="clear_inputs">C</string>
 
+    <string name="error_message">ERROR</string>
+
+
+
     <string name="input_info">""</string>
     <string name="display_result">display result:</string>
 
