@@ -120,25 +120,25 @@ public class MainActivity extends AppCompatActivity {
         mathMode.animate().translationX(50f).start();
     }
 
-    private void changeBackgroundColour() {
-        ImageButton.
-        buttonPlus.setBackgroundTintList(Color.getResources().getColorStateList(R.color.button_pressed_colour));
 
-        view.background.setTin
-                Ima
 
-    }
 
-    //hämtar input från Edittext och gör om till Double
-    public String checkInput(EditText input){
-        String inputStr = input.getText().toString();
 
-        if(isNumeric(inputStr)) {
-            return inputStr;
-        } else {
-            return error;
-        }
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     // Gör om svar till en sträng med två decimaler och visar det i resultText.
@@ -273,24 +273,25 @@ public class MainActivity extends AppCompatActivity {
         if(isNumeric(inputStr)) {
             return inputStr;
         } else {
-            return "ERROR";
+            return error;
         }
     }
 
     String error = "ERROR";
     public void resultBtnClicked(View view) {
-        if(!checkInput(input1).equals(error) && !checkInput(input2).equals(error) && isTwoFieldShowed) {
-         tintButton(buttonResult);
-        if( checkInput(input1) != "ERROR" && checkInput(input2) != "ERROR" && isTwoFieldShowed) {
-            double input1AsDouble = Double.parseDouble(input1.getText().toString());
-            double input2AsDouble = Double.parseDouble(input2.getText().toString());
-            switchOperation(input1AsDouble, input2AsDouble);
-        } else if(!checkInput(input2).equals(error) && !isTwoFieldShowed) {
-            double input2AsDouble = Double.parseDouble(input2.getText().toString());
-            switchOperation(0, input2AsDouble);
-        } else {
-            resultText.setText(error);
-        }
+
+            tintButton(buttonResult);
+            if (!checkInput(input1).equals(error)  && !checkInput(input2).equals(error)  && isTwoFieldShowed) {
+                double input1AsDouble = Double.parseDouble(input1.getText().toString());
+                double input2AsDouble = Double.parseDouble(input2.getText().toString());
+                switchOperation(input1AsDouble, input2AsDouble);
+            } else if (!checkInput(input2).equals(error) && !isTwoFieldShowed) {
+                double input2AsDouble = Double.parseDouble(input2.getText().toString());
+                switchOperation(0, input2AsDouble);
+            } else {
+                resultText.setText(error);
+            }
+
     }
 
     private void switchOperation(double in1, double in2) {
@@ -342,12 +343,12 @@ public class MainActivity extends AppCompatActivity {
         setResult(result);
     }
 
-    public static boolean isNumeric(String str) {
-        try {
-            Double.parseDouble(str);
-            return true;
-        } catch(NumberFormatException e){
-            return false;
-        }
-    }
+
+
+
+
+
+
+
+
 }

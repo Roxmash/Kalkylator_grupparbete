@@ -112,8 +112,7 @@
                 android:text="@string/clear_inputs"
                 app:srcCompat="@drawable/clear_button"
                 android:contentDescription="@string/clear_content"
-                tools:ignore="UsingOnClickInXml"
-                android:backgroundTint="@color/button_pressed_colour"/>
+                tools:ignore="UsingOnClickInXml" />
 
             <ImageButton
                 android:id="@+id/button_result"
