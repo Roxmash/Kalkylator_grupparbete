@@ -1,10 +1,15 @@
 package com.brandent.kalkylator_grupparbete;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.core.view.ViewCompat;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,17 +18,22 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    double resultAsDouble;
-    double input1AsDouble;
-    double input2AsDouble;
     EditText input1;
     EditText input2;
     TextView resultText;
+    ImageButton buttonPlus;
+    ImageButton buttonMinus;
+    ImageButton buttonDivide;
+    ImageButton buttonRoot;
+    ImageButton buttonPercent;
+    ImageButton buttonMultiply;
+    ImageButton buttonPythagorean;
+    ImageButton buttonCylinderVolume;
+    ImageButton buttonCircleArea;
+
 
     boolean isTwoFieldShowed = true;
-    String inputStr1 = "";
-    String inputStr2 = "";
-    String tempStr = "";
+
     String currentOperation = "+";
 
     ImageView mathMode;
@@ -35,8 +45,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         input1 = findViewById(R.id.input1);
         input2 = findViewById(R.id.input2);
+
         resultText =findViewById(R.id.display_result_tw);
         mathMode = findViewById(R.id.math_mode);
+        buttonPlus = findViewById(R.id.button_plus);
+        buttonMinus = findViewById(R.id.button_minus);
+        buttonDivide = findViewById(R.id.button_divide);
+        buttonRoot = findViewById(R.id.button_square_root);
+        buttonPercent = findViewById(R.id.button_procent);
+        buttonMultiply = findViewById(R.id.button_multiply);
+        buttonPythagorean = findViewById(R.id.button_pythager);
+        buttonCylinderVolume = findViewById(R.id.button_cylinder_volume);
+        buttonCircleArea = findViewById(R.id.button_circle_area);
+
+
     }
 
     private void changeFieldsVisibility(boolean showTwoField){
@@ -61,6 +83,28 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+// Animations metoder, om "mode" knappen flyttar på sig, utför animation, annars gör inget.
+    private void animateButton() {
+        if (isTwoFieldShowed) {
+
+            mathMode.animate().translationX(0).start();
+
+        } else
+            mathMode.animate().translationX(-25f).start();
+    }
+
+    private void animateButtonLeft() {
+        mathMode.animate().translationX(50f).start();
+    }
+
+    private void changeBackgroundColour() {
+        ImageButton.
+        buttonPlus.setBackgroundTintList(Color.getResources().getColorStateList(R.color.button_pressed_colour));
+
+        view.background.setTin
+                Ima
+
+    }
 
     //hämtar input från Edittext och gör om till Double
     public String checkInput(EditText input){
@@ -69,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         if(isNumeric(inputStr)) {
             return inputStr;
         } else {
-            return "ERROR";
+            return error;
         }
     }
 
@@ -82,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
         resultText.setVisibility(View.VISIBLE);
         resultText.setText(resultAsString);
+
     }
 
     //Clear input field
@@ -96,7 +141,9 @@ public class MainActivity extends AppCompatActivity {
         input2.setHint("value 2");
         changeFieldsVisibility(true);
         setImage("plus");
-    }
+        animateButton();
+
+        }
 
     public void minusBtnClicked(View view) {
         currentOperation = "-";
@@ -104,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
         input2.setHint("value 2");
         changeFieldsVisibility(true);
         setImage("minus");
+        animateButton();
     }
 
     public void divideBtnClicked(View view) {
@@ -112,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
         input2.setHint("value 2");
         changeFieldsVisibility(true);
         setImage("division");
+        animateButton();
     }
 
     public void rootBtnClicked(View view) {
@@ -120,7 +169,9 @@ public class MainActivity extends AppCompatActivity {
         input1.setHint("");
         input2.setHint("Value");
         setImage("sqr_root");
+        animateButtonLeft();
     }
+
 
     public void percentBtnClicked(View view) {
         currentOperation = "%";
@@ -128,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
         input1.setHint("%");
         input2.setHint("Value");
         setImage("procent_sign");
+        animateButton();
     }
 
     public void multiplyBtnClicked(View view) {
@@ -136,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
         input2.setHint("value 2");
         changeFieldsVisibility(true);
         setImage("multiply");
+        animateButton();
     }
 
     public void pyfagorBtnClicked(View view) {
@@ -144,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
         input2.setHint("value b");
         changeFieldsVisibility(true);
         setImage("a2b2");
+        animateButton();
 
     }
 
@@ -154,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
         input1.setHint("Radie");
         input2.setHint("Height");
         setImage("cylinder");
+        animateButton();
     }
 
     public void circleBtnClicked(View view) {
@@ -161,18 +216,20 @@ public class MainActivity extends AppCompatActivity {
         input2.setHint("Radie");
         changeFieldsVisibility(false);
         setImage("sphere");
-    }
+        animateButtonLeft();
+        }
 
+    String error = "ERROR";
     public void resultBtnClicked(View view) {
-        if( checkInput(input1) != "ERROR" && checkInput(input2) != "ERROR" && isTwoFieldShowed) {
+        if(!checkInput(input1).equals(error) && !checkInput(input2).equals(error) && isTwoFieldShowed) {
             double input1AsDouble = Double.parseDouble(input1.getText().toString());
             double input2AsDouble = Double.parseDouble(input2.getText().toString());
             switchOperation(input1AsDouble, input2AsDouble);
-        } else if(checkInput(input2) != "ERROR" && !isTwoFieldShowed) {
+        } else if(!checkInput(input2).equals(error) && !isTwoFieldShowed) {
             double input2AsDouble = Double.parseDouble(input2.getText().toString());
             switchOperation(0, input2AsDouble);
         } else {
-            resultText.setText("ERROR");
+            resultText.setText(error);
         }
     }
 
