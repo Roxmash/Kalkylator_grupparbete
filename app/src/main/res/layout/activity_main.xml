@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!-- Grupparbete: Hampus, Denis, Ana, Oscar.Sparrman-->
+<!-- Grupparbete: Hampus, Denis, Ana, Oscar.Sparrman -->
 
 
     <!-- App titel -->
@@ -112,7 +112,8 @@
                 android:text="@string/clear_inputs"
                 app:srcCompat="@drawable/clear_button"
                 android:contentDescription="@string/clear_content"
-                tools:ignore="UsingOnClickInXml" />
+                tools:ignore="UsingOnClickInXml"
+                android:backgroundTint="@color/button_pressed_colour"/>
 
             <ImageButton
                 android:id="@+id/button_result"
@@ -266,12 +267,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:contentDescription="@string/cylinder_volume_content"
                 android:onClick="cylinderBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/cylinder"
-                android:contentDescription="@string/cylinder_volume_content"
-                tools:ignore="UsingOnClickInXml"/>
+                tools:ignore="UsingOnClickInXml" />
 
             <ImageButton
                 android:id="@+id/button_circle_area"

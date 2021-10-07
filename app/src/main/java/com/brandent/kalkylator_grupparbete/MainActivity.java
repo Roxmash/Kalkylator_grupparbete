@@ -1,7 +1,11 @@
 package com.brandent.kalkylator_grupparbete;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.core.view.ViewCompat;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
     TextView resultText;
 
     boolean isTwoFieldShowed = true;
+
     String currentOperation = "+";
+
     ImageView mathMode;
     ImageButton buttonclear;
     ImageButton buttonPlus;
@@ -83,8 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
             else {
-
-
+            input2.setText(input1.getText().toString());
             input1.setVisibility(View.GONE);
             isTwoFieldShowed = false;
         }
@@ -101,8 +106,39 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+// Animations metoder, om "mode" knappen flyttar på sig, utför animation, annars gör inget.
+    private void animateButton() {
+        if (isTwoFieldShowed) {
 
+            mathMode.animate().translationX(0).start();
 
+        } else
+            mathMode.animate().translationX(-25f).start();
+    }
+
+    private void animateButtonLeft() {
+        mathMode.animate().translationX(50f).start();
+    }
+
+    private void changeBackgroundColour() {
+        ImageButton.
+        buttonPlus.setBackgroundTintList(Color.getResources().getColorStateList(R.color.button_pressed_colour));
+
+        view.background.setTin
+                Ima
+
+    }
+
+    //hämtar input från Edittext och gör om till Double
+    public String checkInput(EditText input){
+        String inputStr = input.getText().toString();
+
+        if(isNumeric(inputStr)) {
+            return inputStr;
+        } else {
+            return error;
+        }
+    }
 
 
     // Gör om svar till en sträng med två decimaler och visar det i resultText.
@@ -113,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
         resultText.setVisibility(View.VISIBLE);
         resultText.setText(resultAsString);
+
     }
 
     //Clear input field
@@ -129,7 +166,9 @@ public class MainActivity extends AppCompatActivity {
         input2.setHint("value 2");
         changeFieldsVisibility(true);
         setImage("plus");
-    }
+        animateButton();
+
+        }
 
     public void minusBtnClicked(View view) {
         tintButton(buttonMinus);
@@ -138,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
         input2.setHint("value 2");
         changeFieldsVisibility(true);
         setImage("minus");
+        animateButton();
     }
 
     public void divideBtnClicked(View view) {
@@ -147,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
         input2.setHint("value 2");
         changeFieldsVisibility(true);
         setImage("division");
+        animateButton();
     }
 
     public void rootBtnClicked(View view) {
@@ -156,7 +197,9 @@ public class MainActivity extends AppCompatActivity {
         input1.setHint("");
         input2.setHint("Value");
         setImage("sqr_root");
+        animateButtonLeft();
     }
+
 
     public void percentBtnClicked(View view) {
         tintButton(buttonPercent);
@@ -165,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
         input1.setHint("%");
         input2.setHint("Value");
         setImage("procent_sign");
+        animateButton();
     }
 
     public void multiplyBtnClicked(View view) {
@@ -174,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
         input2.setHint("value 2");
         changeFieldsVisibility(true);
         setImage("multiply");
+        animateButton();
     }
 
     public void pythagorBtnClicked(View view) {
@@ -183,6 +228,7 @@ public class MainActivity extends AppCompatActivity {
         input2.setHint("value b");
         changeFieldsVisibility(true);
         setImage("a2b2");
+        animateButton();
 
     }
 
@@ -194,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
         input1.setHint("Radie");
         input2.setHint("Height");
         setImage("cylinder");
+        animateButton();
     }
 
     public void circleBtnClicked(View view) {
@@ -202,7 +249,8 @@ public class MainActivity extends AppCompatActivity {
         input2.setHint("Radie");
         changeFieldsVisibility(false);
         setImage("sphere");
-    }
+        animateButtonLeft();
+        }
 
   /* Kollar om det är ett siffervärde i inmatningsfälten.
      Om det är ett siffervärde använder den det annars Error.
@@ -229,22 +277,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    String error = "ERROR";
     public void resultBtnClicked(View view) {
+        if(!checkInput(input1).equals(error) && !checkInput(input2).equals(error) && isTwoFieldShowed) {
          tintButton(buttonResult);
         if( checkInput(input1) != "ERROR" && checkInput(input2) != "ERROR" && isTwoFieldShowed) {
             double input1AsDouble = Double.parseDouble(input1.getText().toString());
             double input2AsDouble = Double.parseDouble(input2.getText().toString());
             switchOperation(input1AsDouble, input2AsDouble);
-        } else if(checkInput(input2) != "ERROR" && !isTwoFieldShowed) {
+        } else if(!checkInput(input2).equals(error) && !isTwoFieldShowed) {
             double input2AsDouble = Double.parseDouble(input2.getText().toString());
             switchOperation(0, input2AsDouble);
         } else {
-            resultText.setText("ERROR");
+            resultText.setText(error);
         }
     }
-
-
-
 
     private void switchOperation(double in1, double in2) {
         CalcMath calc = new CalcMath(in1, in2);
@@ -293,8 +340,14 @@ public class MainActivity extends AppCompatActivity {
                 toast.show();
         }
         setResult(result);
-
     }
 
-
+    public static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+        }
+    }
 }

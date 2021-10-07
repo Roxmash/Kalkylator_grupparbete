@@ -3,7 +3,11 @@
     <dimen name="button_height">70dp</dimen>
     <dimen name="input_height">50sp</dimen>
     <dimen name="math_mode_height">50sp</dimen>
+    <dimen name="math_mode_height_plus">55sp</dimen>
+    <dimen name="math_mode_height_minus">45sp</dimen>
     <dimen name="math_mode_width">70dp</dimen>
+    <dimen name="math_mode_width_plus">75sp</dimen>
+    <dimen name="math_mode_width_minus">65sp</dimen>
 
     <dimen name="menu_size">40sp</dimen>
     <dimen name="result_size">40sp</dimen>
