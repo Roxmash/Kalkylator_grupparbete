@@ -1,14 +1,8 @@
 package com.brandent.kalkylator_grupparbete;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.core.view.ViewCompat;
-
-import android.content.Context;
-import android.graphics.Color;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -29,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     String currentOperation = "+";
 
     ImageView mathMode;
-    ImageButton buttonclear;
+    ImageButton buttonClear;
     ImageButton buttonPlus;
     ImageButton buttonMinus;
     ImageButton buttonDivide;
@@ -50,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         input2 = findViewById(R.id.input2);
         resultText =findViewById(R.id.display_result_tw);
         mathMode = findViewById(R.id.math_mode);
-        buttonclear = findViewById(R.id.button_erase);
+        buttonClear = findViewById(R.id.button_erase);
         buttonPlus = findViewById(R.id.button_plus);
         buttonMinus = findViewById(R.id.button_minus);
         buttonDivide = findViewById(R.id.button_divide);
@@ -65,10 +59,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @SuppressLint("UseCompatLoadingForColorStateLists")
     public void tintButton(ImageButton button){
 
          buttonPlus.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
-         buttonclear.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
+         buttonClear.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
          buttonMinus.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
          buttonDivide.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
          buttonRoot.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
@@ -154,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Clear input field
     public void clearBtnClicked(View view) {
-        tintButton(buttonclear);
+        tintButton(buttonClear);
         input1.setText("");
         input2.setText("");
     }
