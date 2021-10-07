@@ -40,15 +40,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void changeFieldsVisibility(boolean showTwoField){
-        if(showTwoField && isTwoFieldShowed){
+        if(showTwoField){
             input1.setVisibility(View.VISIBLE);
             isTwoFieldShowed = true;
 
-        } else if(showTwoField && !isTwoFieldShowed){
-            input2.setText(tempStr);
         }
             else {
-            tempStr = input2.getText().toString();
             input2.setText(input1.getText().toString());
             input1.setVisibility(View.GONE);
             isTwoFieldShowed = false;
@@ -59,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
     private void setImage(String imageName) {
 
         int id = getResources().getIdentifier(imageName,"drawable",getPackageName());
+
         mathMode.setImageResource(id);
+
 
     }
 

@@ -55,6 +55,7 @@
         android:layout_height="@dimen/math_mode_height"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/input2"
         app:layout_constraintEnd_toStartOf="@+id/input2"
         app:layout_constraintStart_toEndOf="@+id/input1"
@@ -62,7 +63,7 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/plus"
         android:background="@drawable/circle_bg"
-        android:contentDescription=""/>
+        android:contentDescription="@string/math_mode_content"/>
 
     <EditText
         android:id="@+id/input2"
@@ -110,7 +111,8 @@
                 android:scaleType="fitCenter"
                 android:text="@string/clear_inputs"
                 app:srcCompat="@drawable/clear_button"
-                android:contentDescription=""/>
+                android:contentDescription="@string/clear_content"
+                tools:ignore="UsingOnClickInXml" />
 
             <ImageButton
                 android:id="@+id/button_result"
@@ -124,7 +126,9 @@
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 android:text="@string/result"
-                app:srcCompat="@drawable/equal" />
+                app:srcCompat="@drawable/equal"
+                android:contentDescription="@string/result_content"
+                tools:ignore="UsingOnClickInXml" />
         </TableRow>
 
         <TableRow>
@@ -142,7 +146,9 @@
                 android:onClick="plusBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/plus" />
+                app:srcCompat="@drawable/plus"
+                android:contentDescription="@string/plus_content"
+                tools:ignore="UsingOnClickInXml" />
 
             <ImageButton
                 android:id="@+id/button_minus"
@@ -157,7 +163,9 @@
                 android:scaleType="fitCenter"
                 android:text=""
                 android:textSize="20sp"
-                app:srcCompat="@drawable/minus" />
+                app:srcCompat="@drawable/minus"
+                android:contentDescription="@string/minus_content"
+                tools:ignore="UsingOnClickInXml" />
 
 
             <ImageButton
@@ -171,7 +179,9 @@
                 android:onClick="divideBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/division" />
+                app:srcCompat="@drawable/division"
+                android:contentDescription="@string/division_content"
+                tools:ignore="UsingOnClickInXml"/>
 
 
         </TableRow>
@@ -191,7 +201,9 @@
                 android:onClick="rootBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/sqr_root" />
+                app:srcCompat="@drawable/sqr_root"
+                android:contentDescription="@string/square_root_content"
+                tools:ignore="UsingOnClickInXml"/>
 
 
             <ImageButton
@@ -205,7 +217,9 @@
                 android:onClick="percentBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/procent_sign" />
+                app:srcCompat="@drawable/procent_sign"
+                android:contentDescription="@string/percent_content"
+                tools:ignore="UsingOnClickInXml"/>
 
 
             <ImageButton
@@ -219,7 +233,9 @@
                 android:onClick="multiplyBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/multiply" />
+                app:srcCompat="@drawable/multiply"
+                android:contentDescription="@string/multiply_content"
+                tools:ignore="UsingOnClickInXml"/>
 
         </TableRow>
 
@@ -238,7 +254,9 @@
                 android:onClick="pyfagorBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/a2b2" />
+                app:srcCompat="@drawable/a2b2"
+                android:contentDescription="@string/a2b2_content"
+                tools:ignore="UsingOnClickInXml"/>
 
             <ImageButton
                 android:id="@+id/button_cylinder_area"
@@ -251,7 +269,9 @@
                 android:onClick="cylinderBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/cylinder" />
+                app:srcCompat="@drawable/cylinder"
+                android:contentDescription="@string/cylinder_volume_content"
+                tools:ignore="UsingOnClickInXml"/>
 
             <ImageButton
                 android:id="@+id/button_circle_area"
@@ -264,7 +284,9 @@
                 android:onClick="circleBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/sphere" />
+                app:srcCompat="@drawable/sphere"
+                android:contentDescription="@string/circle_area_content"
+                tools:ignore="UsingOnClickInXml"/>
         </TableRow>
 
     </TableLayout>
