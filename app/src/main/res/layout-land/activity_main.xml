@@ -80,14 +80,12 @@
         android:layout_height="@dimen/input_height"
         android:layout_marginStart="10dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="20dp"
         android:autofillHints="enter a value"
         android:hint="@string/input_hint"
         android:inputType="numberSigned|numberDecimal"
         android:minHeight="48dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/math_mode"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         tools:ignore="TextContrastCheck" />
@@ -96,13 +94,9 @@
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
         android:gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/display_result_tw">
+        app:layout_constraintStart_toEndOf="@+id/input2"
+        tools:layout_editor_absoluteY="232dp">
 
         <TableRow>
 

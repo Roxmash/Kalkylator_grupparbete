@@ -144,8 +144,8 @@ public class MainActivity extends AppCompatActivity {
     public void plusBtnClicked(View view) {
         tintButton(buttonPlus);
         currentOperation = "+";
-        input1.setHint("value 1");
-        input2.setHint("value 2");
+        input1.setHint("Value 1");
+        input2.setHint("Value 2");
         changeFieldsVisibility(true);
         setImage("plus");
         animateButton();
@@ -154,8 +154,8 @@ public class MainActivity extends AppCompatActivity {
     public void minusBtnClicked(View view) {
         tintButton(buttonMinus);
         currentOperation = "-";
-        input1.setHint("value 1");
-        input2.setHint("value 2");
+        input1.setHint("Value 1");
+        input2.setHint("Value 2");
         changeFieldsVisibility(true);
         setImage("minus");
         animateButton();
@@ -164,8 +164,8 @@ public class MainActivity extends AppCompatActivity {
     public void divideBtnClicked(View view) {
         tintButton(buttonDivide);
         currentOperation = "/";
-        input1.setHint("value 1");
-        input2.setHint("value 2");
+        input1.setHint("Value 1");
+        input2.setHint("Value 2");
         changeFieldsVisibility(true);
         setImage("division");
         animateButton();
@@ -195,8 +195,8 @@ public class MainActivity extends AppCompatActivity {
     public void multiplyBtnClicked(View view) {
         tintButton(buttonMultiply);
         currentOperation = "*";
-        input1.setHint("value 1");
-        input2.setHint("value 2");
+        input1.setHint("Value 1");
+        input2.setHint("Value 2");
         changeFieldsVisibility(true);
         setImage("multiply");
         animateButton();
@@ -205,8 +205,8 @@ public class MainActivity extends AppCompatActivity {
     public void pythagorBtnClicked(View view) {
         tintButton(buttonPythagorean);
         currentOperation = "pythagoras";
-        input1.setHint("value a");
-        input2.setHint("value b");
+        input1.setHint("Value A");
+        input2.setHint("Value B");
         changeFieldsVisibility(true);
         setImage("a2b2");
         animateButton();

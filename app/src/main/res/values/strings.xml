@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Kalkylator_grupparbete</string>
-    <string name="title">CALCULATOR v.3.0</string>
+    <string name="title">CALCULATOR</string>
     <string name="result">=</string>
     <string name="divide">÷</string>
     <string name="plus">+</string>
@@ -8,38 +8,36 @@
     <string name="multiplication">×</string>
     <string name="square_root">√</string>
     <string name="procent">%</string>
-    <string name="pythageravsats">a²+b²</string>
-    <string name="circle_area">cirk_area</string>
-    <string name="cylinder_area">cyl_area</string>
+    <string name="pythageravsats">A²+B²</string>
 
     <string name="clear_inputs">C</string>
 
     <string name="error_message">ERROR</string>
 
     <string name="input_info">""</string>
-    <string name="display_result">display result:</string>
+    <string name="display_result">Display result:</string>
 
-    <string name="math_mode_content">choose what mode you want, ex: "plus".</string>
+    <string name="math_mode_content">Choose what mode you want, ex: "plus".</string>
 
-    <string name="clear_content">press here to clear the inputs.</string>
-    <string name="result_content">press this button to choose what mode you want, ex: "plus":</string>
+    <string name="clear_content">Press here to clear the inputs.</string>
+    <string name="result_content">Press this button to choose what mode you want, ex: "plus":</string>
 
-    <string name="plus_content">press this button to choose this too plus two values of your choice.</string>
-    <string name="minus_content">press this button to choose this too subtract one value from another.</string>
-    <string name="division_content">press this button to choose this too multiply two values of your choice.</string>
+    <string name="plus_content">Press this button to choose this too plus two values of your choice.</string>
+    <string name="minus_content">Press this button to choose this too subtract one value from another.</string>
+    <string name="division_content">Press this button to choose this too multiply two values of your choice.</string>
 
-    <string name="square_root_content">press this button to choose what mode you want, ex: "plus".</string>
-    <string name="percent_content">press this button to choose what mode you want, ex: "plus":</string>
-    <string name="multiply_content">press this button to choose this too multiply two values of your choice:</string>
+    <string name="square_root_content">Press this button to choose what mode you want, ex: "plus".</string>
+    <string name="percent_content">Press this button to choose what mode you want, ex: "plus":</string>
+    <string name="multiply_content">Press this button to choose this too multiply two values of your choice:</string>
 
-    <string name="a2b2_content">press this button to choose this too calculate the value of the square on the hypotenuse.</string>
-    <string name="cylinder_volume_content">press this button to choose this too calculate the volume of a cylinder.</string>
+    <string name="a2b2_content">Press this button to choose this too calculate the value of the square on the hypotenuse.</string>
+    <string name="cylinder_volume_content">Press this button to choose this too calculate the volume of a cylinder.</string>
     <string name="circle_area_content">press this button to choose this too calculate the area of a circle.</string>
 
     <string name="starring">App creators</string>
     <string name="coops">Lillayoyo, Piggest, Virungabunga, Roxith</string>
 
-    <string name="input_hint">enter a value</string>
+    <string name="input_hint">Enter a value</string>
     <string name="error">ERROR</string>
 
 
