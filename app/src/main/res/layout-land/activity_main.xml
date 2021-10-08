@@ -5,38 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/calc_background">
 
 
     <!-- Grupparbete: Hampus, Denis, Ana, Oscar.Sparrman -->
 
-
     <!-- App title -->
 
-    <!-- Information -->
+    <!-- left column -->
 
     <!-- input 1 -->
 
     <!-- input 2 -->
-
 
     <TextView
         android:id="@+id/app_title"
         android:layout_width="0dp"
         android:layout_height="@dimen/button_height_landscape"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:paddingTop="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/circle_bg"
-        android:fontFamily="@font/krona_one"
-        android:gravity="center"
+        android:fontFamily="@font/comfortaa"
+
+        android:gravity="center_horizontal"
+        android:paddingTop="5dp"
         android:text="@string/title"
         android:textColor="@color/white"
         android:textSize="@dimen/menu_size_landscape"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tableLayout"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
 
@@ -44,10 +45,10 @@
         android:id="@+id/linearLayout"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical"
         android:weightSum="1"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_title">
 
         <EditText
@@ -56,7 +57,9 @@
             android:layout_height="@dimen/input_height"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
             android:autofillHints="enter a value"
+            android:background="@drawable/input_shape"
             android:hint="@string/input_hint"
             android:inputType="numberSigned|numberDecimal"
             android:textAlignment="center"
@@ -93,8 +96,10 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/input_height"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
             android:autofillHints="enter a value"
+            android:background="@drawable/input_shape"
             android:hint="@string/input_hint"
             android:inputType="numberSigned|numberDecimal"
             android:minHeight="48dp"
@@ -114,14 +119,14 @@
         android:id="@+id/tableLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="15dp"
         android:gravity="center_horizontal"
         app:layout_constraintBottom_toTopOf="@+id/starring"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
@@ -136,7 +141,7 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/button_height_landscape"
                 android:layout_margin="5dp"
-                android:layout_weight="2"
+                android:layout_weight="2.08"
                 android:background="@drawable/circle_bg"
                 android:contentDescription="@string/clear_content"
                 android:onClick="clearBtnClicked"
@@ -326,15 +331,15 @@
     <TextView
         android:id="@+id/display_result_tw"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/back"
+        android:layout_height="@dimen/input_height"
+        android:layout_margin="10dp"
+        android:background="@drawable/input_shape"
         android:fontFamily="@font/krona_one"
         android:textSize="@dimen/result_size"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="parent"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
@@ -343,7 +348,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:background="@color/button_colour"
-        android:fontFamily="@font/krona_one"
+        android:fontFamily="@font/droid_sans_mono"
+        android:padding="3dp"
         android:text="@string/starring"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -359,7 +365,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/krona_one"
+        android:fontFamily="@font/heebo_medium"
         android:text="@string/coops"
         android:textAlignment="center"
         android:textSize="@dimen/co_ops_size"

@@ -2,6 +2,7 @@ package com.brandent.kalkylator_grupparbete;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -63,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
     @SuppressLint("UseCompatLoadingForColorStateLists")
     public void tintButton(ImageButton button){
 
@@ -81,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
          buttonResult.setBackgroundTintList(tint);
          button.setBackgroundTintList(getResources().getColorStateList(R.color.pressed_button));
     }
-
 
     private void changeFieldsVisibility(boolean showTwoField){
 
@@ -126,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Gör om svar till en sträng med två decimaler och visar det i resultText.
     public void setResult(double result){
-        DecimalFormat df = new DecimalFormat("#.00");
+        DecimalFormat df = new DecimalFormat("#.00000");
         String resultAsString = df.format(result);
         resultText.setText(resultAsString);
 

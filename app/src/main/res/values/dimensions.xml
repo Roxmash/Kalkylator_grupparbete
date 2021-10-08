@@ -11,11 +11,12 @@
     <dimen name="starring_size">25sp</dimen>
     <dimen name="co_ops_size">15sp</dimen>
     <dimen name="text_size_standard">20sp</dimen>
+    <dimen name="text_size_input">18sp</dimen>
 
     //landscapemode
 
     <dimen name="menu_size_landscape">30sp</dimen>
-    <dimen name="button_height_landscape">50dp</dimen>
+    <dimen name="button_height_landscape">60dp</dimen>
     <dimen name="input_height_landscape">50sp</dimen>
     <dimen name="math_mode_height_landscape">50sp</dimen>
     <dimen name="math_mode_width_landscape">70dp</dimen>

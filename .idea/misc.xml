@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/drawable/circle_bg.xml" value="0.1918918918918919" />
+        <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/drawable/input_shape.xml" value="0.1918918918918919" />
         <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/font-v26/main_font.xml" value="0.31302083333333336" />
         <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/font/heebo_medium.xml" value="0.31302083333333336" />
         <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/font/main_font.xml" value="0.22864583333333333" />
         <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/font/press_start_2p.xml" value="0.22864583333333333" />
-        <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
+        <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/layout-land/activity_main.xml" value="0.33" />
+        <entry key="..\:/skol grejer AU21/AndroidStudio/Kalkylator_grupparbete/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/drawable/button_pressed.xml" value="0.14322916666666666" />
         <entry key="app/src/main/res/drawable/circle_bg.xml" value="0.25833333333333336" />
         <entry key="app/src/main/res/drawable/cylinder.xml" value="0.14427083333333332" />
