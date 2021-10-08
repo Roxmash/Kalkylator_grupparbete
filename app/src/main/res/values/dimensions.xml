@@ -10,8 +10,8 @@
     <dimen name="math_mode_width_minus">65sp</dimen>
 
     <dimen name="menu_size">40sp</dimen>
-    <dimen name="result_size">40sp</dimen>
-    <dimen name="starring_size">30sp</dimen>
-    <dimen name="co_ops_size">20sp</dimen>
+    <dimen name="result_size">30sp</dimen>
+    <dimen name="starring_size">25sp</dimen>
+    <dimen name="co_ops_size">15sp</dimen>
     <dimen name="text_size_standard">20sp</dimen>
 </resources>

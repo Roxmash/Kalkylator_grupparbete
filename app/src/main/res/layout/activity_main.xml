@@ -9,7 +9,7 @@
 <!-- Grupparbete: Hampus, Denis, Ana, Oscar.Sparrman -->
 
 
-    <!-- App titel -->
+    <!-- App title -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
@@ -17,14 +17,15 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:gravity="center"
-        android:text="@string/titel"
-        android:textSize="@dimen/menu_size"
-        android:textColor="@color/white"
         android:background="@drawable/circle_bg"
+        android:gravity="center"
+        android:text="@string/title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/menu_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <!-- Information -->
 
@@ -38,16 +39,18 @@
         android:layout_height="@dimen/input_height"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="10dp"
+        android:autofillHints="enter a value"
+        android:hint="@string/input_hint"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textSize="20sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/input2"
         app:layout_constraintEnd_toStartOf="@+id/math_mode"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/input2"
         app:layout_constraintVertical_bias="0.0"
-        android:inputType="number"
-        android:hint="@string/input_hint"
-        android:textAlignment="center"
-        android:autofillHints="enter a value"/>
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
     <ImageView
         android:id="@+id/math_mode"
@@ -55,6 +58,8 @@
         android:layout_height="@dimen/math_mode_height"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:background="@drawable/circle_bg"
+        android:contentDescription="@string/math_mode_content"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/input2"
         app:layout_constraintEnd_toStartOf="@+id/input2"
@@ -62,8 +67,7 @@
         app:layout_constraintTop_toTopOf="@+id/input2"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/plus"
-        android:background="@drawable/circle_bg"
-        android:contentDescription="@string/math_mode_content"/>
+        tools:ignore="ImageContrastCheck" />
 
     <EditText
         android:id="@+id/input2"
@@ -72,14 +76,16 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
+        android:autofillHints="enter a value"
+        android:hint="@string/input_hint"
         android:inputType="number"
         android:minHeight="48dp"
-        android:hint="@string/input_hint"
         android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/math_mode"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:autofillHints="enter a value"/>
+        tools:ignore="TextContrastCheck" />
 
     <!-- Knapp layout -->
 
@@ -87,7 +93,9 @@
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
         android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,13 +114,13 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:contentDescription="@string/clear_content"
                 android:onClick="clearBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 android:text="@string/clear_inputs"
                 app:srcCompat="@drawable/clear_button"
-                android:contentDescription="@string/clear_content"
-                tools:ignore="UsingOnClickInXml" />
+                tools:ignore="UsingOnClickInXml,ImageContrastCheck" />
 
             <ImageButton
                 android:id="@+id/button_result"
@@ -122,13 +130,13 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:contentDescription="@string/result_content"
                 android:onClick="resultBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 android:text="@string/result"
                 app:srcCompat="@drawable/equal"
-                android:contentDescription="@string/result_content"
-                tools:ignore="UsingOnClickInXml" />
+                tools:ignore="UsingOnClickInXml,DuplicateSpeakableTextCheck,RedundantDescriptionCheck,ImageContrastCheck" />
         </TableRow>
 
         <TableRow>
@@ -143,12 +151,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:contentDescription="@string/plus_content"
                 android:onClick="plusBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/plus"
-                android:contentDescription="@string/plus_content"
-                tools:ignore="UsingOnClickInXml" />
+                tools:ignore="UsingOnClickInXml,ImageContrastCheck,RedundantDescriptionCheck" />
 
             <ImageButton
                 android:id="@+id/button_minus"
@@ -158,14 +166,14 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:contentDescription="@string/minus_content"
                 android:onClick="minusBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 android:text=""
                 android:textSize="20sp"
                 app:srcCompat="@drawable/minus"
-                android:contentDescription="@string/minus_content"
-                tools:ignore="UsingOnClickInXml" />
+                tools:ignore="UsingOnClickInXml,RedundantDescriptionCheck,ImageContrastCheck" />
 
 
             <ImageButton
@@ -176,12 +184,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:contentDescription="@string/division_content"
                 android:onClick="divideBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/division"
-                android:contentDescription="@string/division_content"
-                tools:ignore="UsingOnClickInXml"/>
+                tools:ignore="UsingOnClickInXml,RedundantDescriptionCheck,ImageContrastCheck" />
 
 
         </TableRow>
@@ -198,28 +206,28 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:contentDescription="@string/square_root_content"
                 android:onClick="rootBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/sqr_root"
-                android:contentDescription="@string/square_root_content"
-                tools:ignore="UsingOnClickInXml"/>
+                tools:ignore="UsingOnClickInXml,RedundantDescriptionCheck,ImageContrastCheck" />
 
 
             <ImageButton
-                android:id="@+id/button_procent"
+                android:id="@+id/button_percent"
                 style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/button_height"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:contentDescription="@string/percent_content"
                 android:onClick="percentBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/procent_sign"
-                android:contentDescription="@string/percent_content"
-                tools:ignore="UsingOnClickInXml"/>
+                tools:ignore="UsingOnClickInXml,RedundantDescriptionCheck,ImageContrastCheck" />
 
 
             <ImageButton
@@ -230,12 +238,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:contentDescription="@string/multiply_content"
                 android:onClick="multiplyBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/multiply"
-                android:contentDescription="@string/multiply_content"
-                tools:ignore="UsingOnClickInXml"/>
+                tools:ignore="UsingOnClickInXml,RedundantDescriptionCheck,ImageContrastCheck" />
 
         </TableRow>
 
@@ -251,12 +259,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:contentDescription="@string/a2b2_content"
                 android:onClick="pythagorBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/a2b2"
-                android:contentDescription="@string/a2b2_content"
-                tools:ignore="UsingOnClickInXml"/>
+                tools:ignore="UsingOnClickInXml,RedundantDescriptionCheck,ImageContrastCheck" />
 
             <ImageButton
                 android:id="@+id/button_cylinder_volume"
@@ -271,7 +279,7 @@
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/cylinder"
-                tools:ignore="UsingOnClickInXml" />
+                tools:ignore="UsingOnClickInXml,ImageContrastCheck,RedundantDescriptionCheck" />
 
             <ImageButton
                 android:id="@+id/button_circle_area"
@@ -281,12 +289,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle_bg"
+                android:contentDescription="@string/circle_area_content"
                 android:onClick="circleBtnClicked"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/sphere"
-                android:contentDescription="@string/circle_area_content"
-                tools:ignore="UsingOnClickInXml"/>
+                tools:ignore="UsingOnClickInXml,RedundantDescriptionCheck,ImageContrastCheck" />
         </TableRow>
 
     </TableLayout>
@@ -300,6 +308,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/back"
+        android:fontFamily="@font/press_start_2p"
         android:textSize="@dimen/result_size"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -311,27 +320,28 @@
         android:id="@+id/starring"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@color/button_colour"
         android:text="@string/starring"
         android:textAlignment="center"
-        android:textSize="@dimen/starring_size"
         android:textColor="@color/white"
-        android:background="@drawable/circle_bg"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="@dimen/starring_size"
+        app:layout_constraintBottom_toTopOf="@+id/co_ops"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/co_ops"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:text="@string/coops"
+        android:textAlignment="center"
         android:textSize="@dimen/co_ops_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/starring"
-        android:textAlignment="center"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

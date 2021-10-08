@@ -1,6 +1,7 @@
 package com.brandent.kalkylator_grupparbete;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     boolean isTwoFieldShowed = true;
 
     String currentOperation = "+";
+    static final String ERROR = "ERROR";
+
+    String tempInputStr = "";
 
     ImageView mathMode;
     ImageButton buttonClear;
@@ -42,19 +46,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         input1 = findViewById(R.id.input1);
         input2 = findViewById(R.id.input2);
-        resultText =findViewById(R.id.display_result_tw);
         mathMode = findViewById(R.id.math_mode);
-        buttonClear = findViewById(R.id.button_erase);
+        resultText = findViewById(R.id.display_result_tw);
         buttonPlus = findViewById(R.id.button_plus);
+        buttonRoot = findViewById(R.id.button_square_root);
+        buttonClear = findViewById(R.id.button_erase);
         buttonMinus = findViewById(R.id.button_minus);
         buttonDivide = findViewById(R.id.button_divide);
-        buttonRoot = findViewById(R.id.button_square_root);
-        buttonPercent = findViewById(R.id.button_procent);
+        buttonResult = findViewById(R.id.button_result);
+        buttonPercent = findViewById(R.id.button_percent);
         buttonMultiply = findViewById(R.id.button_multiply);
+        buttonCircleArea = findViewById(R.id.button_circle_area);
         buttonPythagorean = findViewById(R.id.button_pythager);
         buttonCylinderVolume = findViewById(R.id.button_cylinder_volume);
-        buttonCircleArea = findViewById(R.id.button_circle_area);
-        buttonResult =findViewById(R.id.button_result);
 
     }
 
@@ -62,28 +66,32 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("UseCompatLoadingForColorStateLists")
     public void tintButton(ImageButton button){
 
-         buttonPlus.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
-         buttonClear.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
-         buttonMinus.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
-         buttonDivide.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
-         buttonRoot.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
-         buttonPercent.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
-         buttonMultiply.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
-         buttonPythagorean.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
-         buttonCylinderVolume.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
-         buttonCircleArea.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
-         buttonResult.setBackgroundTintList(getResources().getColorStateList(R.color.buttoncolour));
+        ColorStateList tint = getResources().getColorStateList(R.color.button_colour);
+
+         buttonPlus.setBackgroundTintList(tint);
+         buttonClear.setBackgroundTintList(tint);
+         buttonMinus.setBackgroundTintList(tint);
+         buttonDivide.setBackgroundTintList(tint);
+         buttonRoot.setBackgroundTintList(tint);
+         buttonPercent.setBackgroundTintList(tint);
+         buttonMultiply.setBackgroundTintList(tint);
+         buttonPythagorean.setBackgroundTintList(tint);
+         buttonCylinderVolume.setBackgroundTintList(tint);
+         buttonCircleArea.setBackgroundTintList(tint);
+         buttonResult.setBackgroundTintList(tint);
          button.setBackgroundTintList(getResources().getColorStateList(R.color.pressed_button));
     }
 
 
     private void changeFieldsVisibility(boolean showTwoField){
-        if(showTwoField){
+
+        if(showTwoField && !isTwoFieldShowed){
             input1.setVisibility(View.VISIBLE);
             isTwoFieldShowed = true;
-
+            input2.setText(tempInputStr);
         }
-            else {
+        else if(!showTwoField && isTwoFieldShowed){
+            tempInputStr = input2.getText().toString();
             input2.setText(input1.getText().toString());
             input1.setVisibility(View.GONE);
             isTwoFieldShowed = false;
@@ -94,55 +102,32 @@ public class MainActivity extends AppCompatActivity {
     // Ändrar till rätt bild brevid inmatningsfälten för respektive matteoperation.
 
     private void setImage(String imageName) {
-
         int id = getResources().getIdentifier(imageName,"drawable",getPackageName());
-
         mathMode.setImageResource(id);
-
-
     }
+
 // Animations metoder, om "mode" knappen flyttar på sig, utför animation, annars gör inget.
     private void animateButton() {
         if (isTwoFieldShowed) {
-
-            mathMode.animate().translationX(0).start();
-
+            mathMode.animate()
+                    .setDuration(500)
+                    .translationX(0)
+                    .start();
         } else
             mathMode.animate().translationX(-25f).start();
     }
 
     private void animateButtonLeft() {
-        mathMode.animate().translationX(50f).start();
+        mathMode.animate()
+                .translationX(50f)
+                .setDuration(500)
+                .start();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // Gör om svar till en sträng med två decimaler och visar det i resultText.
     public void setResult(double result){
         DecimalFormat df = new DecimalFormat("#.00");
-
         String resultAsString = df.format(result);
-
-        resultText.setVisibility(View.VISIBLE);
         resultText.setText(resultAsString);
 
     }
@@ -152,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
         tintButton(buttonClear);
         input1.setText("");
         input2.setText("");
+        resultText.setText("");
+        tempInputStr = "";
     }
 
     public void plusBtnClicked(View view) {
@@ -162,7 +149,6 @@ public class MainActivity extends AppCompatActivity {
         changeFieldsVisibility(true);
         setImage("plus");
         animateButton();
-
         }
 
     public void minusBtnClicked(View view) {
@@ -227,7 +213,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     public void cylinderBtnClicked(View view) {
         tintButton(buttonCylinderVolume);
         currentOperation = "cylinder";
@@ -268,82 +253,101 @@ public class MainActivity extends AppCompatActivity {
         if(isNumeric(inputStr)) {
             return inputStr;
         } else {
-            return error;
+            return ERROR;
         }
     }
 
-    String error = "ERROR";
-    public void resultBtnClicked(View view) {
 
+    public void resultBtnClicked(View view) {
             tintButton(buttonResult);
-            if (!checkInput(input1).equals(error)  && !checkInput(input2).equals(error)  && isTwoFieldShowed) {
+
+            CalcMath calc;
+            if (!checkInput(input1).equals(ERROR)  && !checkInput(input2).equals(ERROR)  && isTwoFieldShowed) {
                 double input1AsDouble = Double.parseDouble(input1.getText().toString());
                 double input2AsDouble = Double.parseDouble(input2.getText().toString());
-                switchOperation(input1AsDouble, input2AsDouble);
-            } else if (!checkInput(input2).equals(error) && !isTwoFieldShowed) {
+                calc = new CalcMath(input1AsDouble, input2AsDouble);
+                switchOperation(calc);
+            } else if (!checkInput(input2).equals(ERROR) && !isTwoFieldShowed) {
                 double input2AsDouble = Double.parseDouble(input2.getText().toString());
-                switchOperation(0, input2AsDouble);
+                calc = new CalcMath(0, input2AsDouble);
+                switchOperation(calc);
             } else {
-                resultText.setText(error);
+                showError();
             }
-
     }
 
-    private void switchOperation(double in1, double in2) {
-        CalcMath calc = new CalcMath(in1, in2);
+    private void showError(){
+        resultText.setText(ERROR);
+    }
 
-        double result = 0;
+    private void switchOperation(CalcMath calc) {
 
+        boolean isError = false;
         switch (currentOperation) {
             case "+":
-                result = calc.addition();
+                calc.addition();
                 break;
 
             case "-":
-                result = calc.subtraction();
+                calc.subtraction();
                 break;
 
             case "/":
-                result = calc.division();
+                if(calc.input2 == 0) {
+                    isError = true;
+                } else {
+                    calc.division();
+                }
                 break;
 
             case "%":
-                result = calc.percent();
+                calc.percent();
                 break;
 
             case  "*":
-                result = calc.multiplication();
+                calc.multiplication();
                 break;
 
             case "pythagoras":
-                result = calc.pythagoras();
+                if(calc.input1 < 0 || calc.input2 < 0) {
+                    isError = true;
+                } else {
+                    calc.pythagoras();
+                }
                 break;
 
             case "√":
-                result = calc.squareRoot();
+                if(calc.input2 < 0) {
+                    isError = true;
+                } else{
+                    calc.squareRoot();
+                }
                 break;
 
             case "cylinder":
-                result = calc.cylinderVolume();
+                if(calc.input1 < 0 || calc.input2 < 0) {
+                    isError = true;
+                } else {
+                    calc.cylinderVolume();
+                }
                 break;
 
             case "circle":
-                result = calc.circleArea();
+                if(calc.input2 < 0) {
+                    isError = true;
+                } else {
+                    calc.circleArea();
+                }
                 break;
-
             default:
                 Toast toast=Toast.makeText(getApplicationContext(),"Something went wrong with current operation." ,Toast.LENGTH_SHORT);
                 toast.show();
         }
-        setResult(result);
+
+        if(isError) {
+            showError();
+        } else {
+            setResult(calc.result);
+        }
     }
-
-
-
-
-
-
-
-
-
 }
