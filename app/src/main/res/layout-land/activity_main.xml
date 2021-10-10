@@ -24,7 +24,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/button_height_landscape"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/circle_bg"
         android:fontFamily="@font/comfortaa"
